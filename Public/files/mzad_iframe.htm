@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0070)http://js.miaozhen.com/mzad_iframe.html?_srv=MZHKY3&l=77048&u=[M_LOC]& -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<style type="text/css">
+    * {
+        padding:0;
+        margin:0;
+    }
+</style>
+<script charset="utf-8" type="text/javascript" async="" src="a(1).gif"></script><script charset="utf-8" src="mz_ad_serving.js"></script><script type="text/javascript">
+(function(doc){
+    var t = parseInt((new Date()).getTime() / 1000);
+    var v = t - t % 300;
+    var js = doc.createElement("script"); 
+	    js.charset = "utf-8";
+        js.src = "http://js.miaozhen.com/mz_ad_serving.js?v=" + v;
+    var fs = doc.getElementsByTagName('script')[0]; 
+	fs.parentNode.insertBefore(js, fs);
+})(document);
+</script>
+</head>
+<body marginwidth="0" marginheight="0">
+<script type="text/javascript">
+(function (win, doc) {
+    var argsObj = {}, l, mediaArgs = {}, t = new Date().getTime();
+    win.location.href.replace(/[\?&#]([_\w]+)=([^&]+)/g, function (all, key, val) {
+        argsObj[key] = val;
+        mediaArgs[key] = val;
+    });
+    if (argsObj && (l = argsObj.l)) {
+        var node = doc.createElement("div");
+        node.id = argsObj["_srv"] + "_" + l;
+        doc.body.appendChild(node);
+        __mz_rpq = win.__mz_rpq || [];
+        argsObj.t = t;
+        __mz_rpq.push(argsObj);
+    }
+
+	// just for AdExchange
+    win.__mz_iframe_callback = function(materials) {
+    	var constructor = materials.constructor;
+    	var delay = new Date().getTime() - t;
+        if (constructor == Object) {
+        	var imps = materials.pm;
+        	if(imps && imps.constructor == Object){
+        		var s0imp = imps["0"];
+                if (s0imp && s0imp.constructor == Array) {
+                    for(var i=0,len=s0imp.length; i<len; i++){
+                    	var url = s0imp[i];
+                    	url += (url.indexOf("?") > 0 ? "&" : "?") + "delay=" + delay;
+                    	s0imp[i] = url;
+                    }
+                }
+        	}
+            if(materials.etype == "C"){
+                if (mediaArgs["u"]) {
+                    materials.src = materials.src.replace("[u]", mediaArgs["u"]);
+                }
+                if (mediaArgs["f"]) {
+                    materials.src = materials.src.replace("[f]", mediaArgs["f"]);
+                }
+                materials.src = materials.src.replace("[t]", new Date().getTime() / 1000);
+            } else {
+                if(mediaArgs["s"]){
+                    var s = decodeURIComponent(mediaArgs["s"]);
+                    var img = new Image();
+                    img.onload = img.onerror = function() {};
+                    img.src = s.replace("[u]", mediaArgs["u"]).replace("[f]", mediaArgs["f"]);
+                }
+            }
+        }else{
+        	
+        }
+    }
+})(window, document);
+</script><div id="MZHKY3_77048" style="width: 990px; height: 90px;"><div id="MZHKY3_MASK_77048" style="position:absolute;width:990px;height:90px;cursor:pointer;background-color:rgb(255,255,255);opacity:0;filter:alpha(opacity=0);"></div><object id="MZHKY3_OBJ_77048" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" align="middle" width="990" height="90"> <param name="wmode" value="transparent"> <param name="allowScriptAccess" value="always"><param name="movie" value="http://imgad0.pclady.com.cn/ivy/image/20149/16/14108334223000.swf"><param name="quality" value="high"><param name="bgcolor" value="#000"><param name="width" value="990"><param name="height" value="90"><embed src="http://imgad0.pclady.com.cn/ivy/image/20149/16/14108334223000.swf" quality="high" bgcolor="#000" width="990" height="90" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" allowscriptaccess="always" loop="true" wmode="transparent" name="MZHKY3_OBJ_77048"></object></div>
+
+
+</body></html>

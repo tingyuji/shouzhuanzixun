@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!-- saved from url=(0089)http://m.tlzx.cc/tel/tellist.aspx?keyword=%E6%B6%AE%E9%94%85%E3%80%81%E7%81%AB%E9%94%85#1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <title>扎鲁特旗通讯录</title>
+    <meta name="description" content="扎鲁特旗通讯录">
+    <link rel="stylesheet" type="text/css" href="Public/home/css/common.v2.css">
+    <link rel="stylesheet" type="text/css" href="Public/home/css/tel.v2.css">
+    <script type="text/javascript" src="Public/home/js/jquery.js"></script>
+    <script type="text/javascript" src="Public/home/js/common.v2.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $.ajax({
+             type:'post',                
+             url:"__URL__/getAllDataByCategory", 
+             data:{category:$('#category').val()},
+             async:false,
+             dataType:'json',
+             success:function(data){ 
+                //console.log(data);
+                if(data==null){
+                    return;
+                }
+                $('#items').html('');
+                for(var i=0;i<data.length;i++){
+                    var row=data[i];
+                    var html='';
+html+='<li><a href="__URL__/teldetail&id='+row.id+'" class="name_tel">';
+html+='<h3 class="lxname"><span>'+row.seller+'</span></h3>';
+html+='<p>电话：'+row.telephone+' </p>';
+if(row.address!=''){
+html+='<p>地址：'+row.address+' </p>';
+}
+
+if(row.contacter!=''){
+html+='<p>联系人：'+row.contacter+' </p>';    
+}
+
+html+='</a>';
+html+='<a href="tel:'+row.telephone+'">';
+html+='</a>';
+html+='</li>';                    
+                    $('#items').append(html);
+
+                }
+
+             }            
+        });   
+    });
+    </script>
+    
+</head>
+<body>
+    
+<header>
+    <dl class="hdcontent">
+        <dd class="toback"><a onClick="window.history.back()"></a></dd>
+        <!--
+        <dd class="hduser">
+            <a href="http://m.tlzx.cc/login/?reurl=/tel/tellist.aspx?keyword=%E6%B6%AE%E9%94%85%E3%80%81%E7%81%AB%E9%94%85"><i class="off"></i></a>
+        </dd>
+    -->
+        <!--
+        <dd class="hdnav"><a onclick="shownav()"></a></dd>
+    -->
+        
+        <dt>扎鲁特旗通讯录</dt>
+    </dl>
+    <div id="hdnav-cont">
+        <span></span>
+        <ul id="TopCss1_top">
+            <li><a class="ind" href="http://m.tlzx.cc/"><i></i></a>首页</li>
+            <li><a class="news" href="http://m.tlzx.cc/news/"><i></i></a>热点资讯</li>
+            <li><a class="bbs" href="http://m.tlzx.cc/bbs/"><i></i></a>逛论坛</li>
+            <li><a class="post" href="http://m.tlzx.cc/post/"><i></i></a>分类信息</li>
+            <li><a class="tel" href="http://m.tlzx.cc/tel/"><i></i></a>电话簿</li>
+            <li><a class="stor" href="http://m.tlzx.cc/store/"><i></i></a>找商家</li>
+            <li><a class="tuan" href="http://m.tlzx.cc/tuan/"><i></i></a>本地团购</li>
+            <li><a class="job" href="http://m.tlzx.cc/post/zhaopin/"><i></i></a>找工作</li>
+            <li><a class="house" href="http://m.tlzx.cc/post/fangwu/"><i></i></a>找房子</li>
+            <li><a class="xlp" href="http://m.tlzx.cc/post/xinloupan/"><i></i></a>新楼盘</li>
+        </ul>
+    </div>
+</header>
+    <ul id="selctebox" style="z-index: 1;">
+        <li class="selctli">
+            <!--
+            <span id="Kindstr">全部类别</span><i></i></li>
+        -->
+        <span id="Kindstr">{$data.category}</span>
+        <!--
+        <i></i>
+    -->
+        </li>
+        <!--
+        <li id="seachretu"><i></i></li>
+        <li id="seachtxt">
+            <input type="text" id="keywords" name="keyword"></li>
+        <li id="seach_stor"></li>
+    -->
+    </ul>
+    <ul class="tel_list" id="items">
+        
+    </ul>
+	<!--
+    <div class="stor_page">点击查看下一页</div>
+	-->
+    <input name="kind1" type="hidden" id="kind1" value="0">
+    <input name="txt1" type="hidden" id="txt1" value="涮锅、火锅">
+    <div id="showtebox">
+        <div id="mzdiv" style="display: none; opacity: 0; height: 643px;">
+        </div>
+        <div id="flrbox" style="display: none; height: 599px;">
+            <div class="flrbox" style="right: -250px;">
+                <div id="flbox" style="height: 599px;"></div>
+            </div>
+        </div>
+    </div>
+    <ul id="srhword" style="top: -408px; display: none;">
+        <li><a href="http://m.tlzx.cc/tel/tellist.aspx?keyword=22"><span>22</span><i></i></a></li><li><a href="http://m.tlzx.cc/tel/tellist.aspx?keyword=11"><span>11</span><i></i></a></li>
+        <li id="operate"><i>收起</i><span>清除记录</span></li>
+    </ul>
+    <script type="text/javascript">
+    var splist = {"Kind":{"0":"0-全部类别","1":"16695-生活服务","2":"27-餐饮美食","3":"28-旅游出行","4":"16697-休闲娱乐","5":"30-教育/培训/科研","6":"16699-房产建材","7":"36-企业/工厂","8":"31-医疗卫生","9":"16696-商务服务","10":"35-党政/社团","11":"16700-农/林/渔/牧","12":"16968-其他类别"}};
+
+/*    $(".selctli").click(function () {
+        if($("#flbox").val()==""){
+            $("#selctebox").css("z-index","1")
+            $("#flrbox").css("display", "block");
+            $("#mzdiv").css("display", "block").animate({ opacity: 0.5 }, 500, function () {
+                $("#flrbox .flrbox").css({ "right": "0", "-webkit-box-shadow": "0 0 20px #000" });
+            })
+            if ($(window).height() > $("body").height()) {
+                $("#mzdiv").height($(window).height());
+                $("#flrbox").height($(window).height() - 44);
+                $("#flbox").height($(window).height() - 44);
+            } else {
+                $("#mzdiv").height($("body").height());
+                $("#flrbox").height($("body").height() - 44);
+                $("#flbox").height($("body").height() - 44);
+            }
+            for (var valu in splist["Kind"]) {
+                $("#flbox").append("<a href='?kind=" + splist["Kind"][valu].split("-")[0] + "'>" + splist["Kind"][valu].split("-")[1] + "<span></span></a>")
+            }
+        }
+    })*/
+    var obj = document.getElementById('flrbox');
+    var mstar = 0, mend = 0, starY = 0, endY = 0, bl = true;
+    obj.addEventListener('touchstart', function (event) {
+        $("#flrbox .flrbox").css("-webkit-transition-duration", "0");
+        if (event.targetTouches.length == 1) {
+            var touch = event.targetTouches[0];
+            mstar = touch.pageX;
+            starY = touch.pageY;
+            bl = false;
+        }
+    });
+    obj.addEventListener('touchmove', function (event) {
+        var sfrt = -parseInt($("#flrbox .flrbox").css("right"));
+        if (event.targetTouches.length == 1) {
+            var touch = event.targetTouches[0];
+            mend = touch.pageX;
+            endY = touch.pageY;
+            if (Math.abs(mend - mstar) > Math.abs(endY - starY)) {
+                event.preventDefault();
+                if ((mend - mstar) >= 0) {
+                    $("#flrbox .flrbox").css("right", (mstar - mend));
+                    bl = true;
+                } else {
+                    bl = false;
+                }
+            }
+        }
+    })
+    obj.addEventListener('touchend', function () {
+        $("#flrbox .flrbox").css("-webkit-transition-duration", "500ms");
+        if (bl) {
+            closflun();
+        }
+    })
+
+    function closflun() {
+        $("#flrbox .flrbox").css({ "right": "-250px" });
+        $("#srhword").css({ "top": "-408px" });
+        $("#mzdiv").animate({ opacity: 0 }, 300, function () {
+            $("#mzdiv").css("display", "none");
+        })
+        setTimeout(function () {
+            $("#flrbox").css("display", "none");
+            $(".main-lifb a").removeClass("curs");
+            $("#flrbox .flrbox").css({ "-webkit-box-shadow": "" });
+            $("#srhword").css("display", "none");
+            $("#flbox").html("")
+        }, 500)
+    }
+    $("#mzdiv").click(function () {
+        closflun();
+    })
+    $("#operate i").click(function () {
+        closflun();
+    })
+    $("#operate span").click(function () {
+        closflun();
+        $("#srhword").remove();
+        DelCookie("keystr");
+    })
+    /*点击放大镜*/
+    $("#seach_stor").click(function () {
+        if ($("#seachtxt").is(":hidden")) {
+            $("#seachretu,#seachtxt").css("display", "table-cell");
+            $(".selctli").css("display", "none");
+            if(GetCookie("keystr")!=""){
+                $("#selctebox").css("z-index","50")
+                $("#srhword").css({ "display": "block" });
+                $("#mzdiv").css("display", "block").animate({ opacity: 0.5 }, 500, function () {
+                    $("#srhword").css({ "top": "82px" });
+                })
+
+                if ($(window).height() > $("body").height()) {
+                    $("#mzdiv").height($(window).height());
+                } else {
+                    $("#mzdiv").height($("body").height());
+                }
+            }
+        } else {
+            if ($("#keywords").val() == "") {
+                $("#keywords").focus();
+            } else {
+                window.location = "?keyword=" + $("#keywords").val();
+            }
+        }
+    })
+    /*点击放大镜*/
+
+    $("#seachretu").click(function () {
+        closflun();
+        $("#seachretu,#seachtxt").css("display", "none");
+        $(".selctli").css("display", "table-cell");
+    })
+
+    var i = 0;
+    var s = 10;
+    if ((document.URL).indexOf('#') > 0) {
+        i = ((document.URL).substring((document.URL).indexOf('#') + 1)) / 1;
+        insertcode(1, i * s);
+    } else {
+        i++;
+        insertcode(i, s);
+
+    }
+    $(".stor_page").bind("click", function () {
+        $(this).html("<img src='http://img.ccoo.cn/wap/images/load.gif' />加载中...");
+        i++;
+        insertcode(i, s);
+    })
+    function insertcode(page, size) {
+        $.ajax({
+            url: "/Handler/Tel/GetTelList.ashx",
+            type: "POST",
+            data: {  txt: $("#txt1").val(), kind: $("#kind1").val(),flag:1, CurPage: page, PageSize: size},
+            success: function (data) {
+                if (data != "undefined") {
+                    if(data=="1001"){
+                        $(".tel_list").append("<div class='telnull'><a href='reply.aspx?txt=" + $("#txt1").val() + "'>亲！没有找到您想要的结果：）把您想找的内容提交给我们 <u>点击提交</u></a></div>");
+                        $(".stor_page").hide();
+                    }
+                    else{
+                        $(".stor_page").show();
+                        window.location.href = "#" + i;
+                        $(".tel_list").append(data);
+                        $(".stor_page").html("点击查看下一页");
+                    }
+                }
+                else {
+                    $(".stor_page").html("没有了");
+                }
+            }
+        });
+    }
+    var flag = true;
+    var srhword=$("#srhword").html()
+	$("#keywords").keyup(function(){
+		var keywds=$(this).val()
+        if (flag && keywds!="") {
+            flag = false;
+		    $.ajax({
+			    url: "/Handler/Tel/GetTelAssociateList.ashx",
+                    type: "POST",
+                    data: { txt: keywds,PageSize:6 },
+			        success: function(data) {
+				    if(data!=""){
+					    $("#srhword").css({"display":"block","top":"82px"}).html(data)
+                        $("#operate").click(function () {
+                            $("#srhword").hide()
+                        })
+				    }else{
+					    $("#srhword").css({"display":"none","top":"-408px"}).html(srhword)
+				    }
+                    flag = true;
+			    }
+		    })
+        }
+	})
+
+    </script>
+        
+<footer>
+    <!--
+    <nav id="FirstBotCss1_BotNavigation">
+        <a href="http://m.tlzx.cc/" id="nomb">首页</a>
+        <a href="http://m.tlzx.cc/news/">热点</a>
+        <a href="http://m.tlzx.cc/bbs/">论坛</a>
+        <a href="http://m.tlzx.cc/post/">分类</a>
+        <a href="http://m.tlzx.cc/tel/">电话</a>
+        <a href="http://m.tlzx.cc/webmap.html">更多</a>
+    </nav>
+    <div class="fot_kid"><span>触屏版</span>
+        /<a href="http://www.tlzx.cc/yp/?pc" id="FirstBotCss1_pc">电脑版</a>
+        /<a href="http://m.tlzx.cc/contactus.aspx">留言</a>
+    </div>
+    -->
+    <div class="fotibc" style="margin:5px;padding-bottom:5px;">
+        <span>本站版权归[029100.Com]所有|合作电话:13947550199<br>
+        </span>
+    </div>
+</footer>
+
+
+
+
+<div id="toTop"><i></i></div>
+<input type="hidden" id="id" value="{$data.id}"/>
+<input type="hidden" id="category" value="{$data.category}"/>
+</body>
+</html>

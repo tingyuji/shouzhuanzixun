@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://waimaichaoren.com/account/center/favorite/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}</style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="user-scalable=no">
+    
+    <meta name="google-site-verification" content="BstJA3X9z6f9HcvoN9AZTwaKo_9Abj_j7dVBPfy640s">
+    <meta name="baidu-site-verification" content="IYCrtVH0i1">
+    <meta property="wb:webmaster" content="239d3d1dbdde1b2c">
+    <link rel="icon" type="image/png" href="http://waimaichaoren.com/favicon.ico">
+    <script type="text/javascript" src="Public/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="Public/js/Cookies/src/cookies.min.js"></script>      
+    <script type="text/javascript" async="" src="Public/favorite_files/ecommerce.js"></script>
+    <script async="" src="Public/favorite_files/analytics.js"></script>
+    <script type="text/javascript" async="" src="Public/favorite_files/rt.js"></script>
+    <script charset="utf-8" src="Public/favorite_files/v.js"></script>
+    <script type="text/javascript">        
+        (function(document, screen) {if (screen.width < 760) {document.location.href="/mobile/";}}(document, screen));
+    </script>
+    
+    <link rel="stylesheet" href="http://waimaichaoren.com/static/desktop/css/common.css?v=2015-5-20">
+    
+    <link rel="stylesheet" href="http://waimaichaoren.com/static/desktop/css/user_center.css">
+
+    <!--[if lte IE 7]><script>window.onload=function(){location.href="/ie6warning/"}</script><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="/static/desktop/js/respond.js"></script>
+    <script>
+        var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video, dh-dialog, dh-checkbox".split(', ');
+         var i= e.length;while (i--){document.createElement(e[i])}
+    </script>
+    <![endif]-->
+    <title>个人中心</title>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        var userName = Cookies.get('username2');
+        var userpoint = Cookies.get('point');
+        if(typeof userName == "undefined"){
+          window.location.href="__URL__/login";
+        }
+        if(userName == ""){
+          window.location.href="__URL__/login";
+        }                
+        $('#userName').html(userName);
+        $.ajax({
+             type:'post',                
+             url:"__URL__/getAllData7", 
+             data:{
+               
+             },
+             async:false,
+             dataType:'json',
+             success:function(data){ 
+                
+                if(data==null){
+                    return;
+                }
+                $('#items').html('');
+                var total=data.total;
+                var items=data.rows;
+                for(var i=0;i<total;i++){
+                    var item=items[i];
+                    var id=item['id'];
+                    var goods=item['goods'];
+                    var point=item['point'];
+                    var numbers=item['numbers'];
+                    var imageName=item['imageName'];
+                    
+                    var html='';
+                        html+='<li class="restaurant-item fl trans">';
+                        html+='<div class="img-box fl">';
+                        html+='<a href="#">';
+                        html+='<img src="'+imageName+'" width="82px" height="82px"></a>';
+                        html+='</div>';
+                        html+='<article class="restaurant-introduce fl">';
+                        html+='<h3 class="ellipsis"><a href="#">'+goods+'</a></h3>';
+                        html+='<dl class="clearfix">';
+                        html+='<dt class="fl">'+point+'积分</dt>';
+                        html+='<dd class="r-small-star fl">';
+                        html+='<div class="r-small-star score" style="width:52.00px"></div>';
+                        html+='</dd>';
+                        html+='</dl>';
+                        html+='<div class="restaurant-state clearfix">';                            
+                        html+='</div>';
+                        html+='</article>';
+                        html+='<div class="close-favorite" data-rid="'+id+'">';
+                        html+='<a rel="'+point+'" title="'+id+'" href="#">√</a></div>';
+                        html+='</li>';                         
+
+                    $('#items').append(html);
+                }
+                $('a[title]').click(function(){
+
+                     var r=confirm("确定要兑换吗？")
+                       
+                       if(r){
+                            var id=$(this).attr('title');
+                            var point=$(this).attr('rel');
+                            //alert(point);
+                            //alert(userpoint);
+                            if(parseInt(point)>parseInt(userpoint)){
+                                alert('积分不够');
+                                return;
+                            }
+                            $.ajax({
+                                url: '__URL__/addData4',
+                                type: 'post',
+                                data: {
+                                    id: id,
+                                    userName: userName,
+                                    point: point
+
+                                },
+                                async:false,
+                                dataType: "text",
+                                success: function(data){
+                                      alert('兑换成功');
+
+                                   } 
+                            }); 
+                       }
+                    
+                });
+
+             }            
+        }); 
+
+    });
+    </script>        
+</head>
+<body class="night  ng-scope" ng-controller="bodyCtrl" day-or-night="">
+    <section class="common-back" id="wrapBackground">
+        
+            <header id="header">
+                <div class="common-width clearfix">
+                    <!--
+                    <h1 class="fl">
+                        <a class="logo base-logo" href="http://waimaichaoren.com/">外卖超人</a>
+                    </h1>
+                    -->
+                    
+                        <ul class="member logging" ng-init="loginInfo=true" style="margin-right:75px;">
+                            <li><a href="http://tel.xsdcm.cn" class="index">首页</a></li>
+                            <li class="userName">
+                                <a href="__URL__/manage" rel="nofollow" draw-user="">
+                                    <span id="userName">15107514080</span>
+                                </a>                       
+                            </li>                           
+    
+                        </ul>
+                    
+                </div>
+            </header>
+        
+        <div id="main-box">
+      
+        
+            <div ng-controller="colorAction" class="ng-scope">
+                <div class="dayColor_two"></div>
+                <div class="dayColor_one"></div>
+                <div class="dayColor_three" ng-class="{dayColor_threeActive:threeActive}"></div>
+            </div>
+        
+            
+    <section>
+        <div class="user-center-main-box common-width clearfix">
+            <aside class="fl">
+                <ul>
+                    <li>
+                        <a href="__URL__/manage" rel="nofollow">账号管理</a>
+                    </li>
+                    <li>
+                        <a href="__URL__/orders" rel="nofollow">我的发布</a>
+                    </li>
+                    <li class="active">
+                        <a href="__URL__/favorite" rel="nofollow">积分兑换</a>
+                    </li>
+                    <li>
+                        <a href="__URL__/address" rel="nofollow">地址管理</a>
+                    </li>
+          
+                </ul>
+            </aside>
+            <article class="fl user-center-main">
+                <header>积分兑换(兑换前,请确保地址和手机号码已经完善,已方便联系)</header>
+                
+    
+        <ul id="items" class="favorite clearfix transform-style">
+                <!--
+                <li class="restaurant-item fl trans">
+                    <div class="img-box fl">
+                        <a href="http://waimaichaoren.com/shanghai/zhu-ge-can-ting/menu/"><img src="Public/favorite_files/4549" width="82px" height="82px"></a>
+                    </div>
+                    <article class="restaurant-introduce fl">
+                        <h3 class="ellipsis"><a href="#">礼品1</a></h3>
+                        <dl class="clearfix">
+                            <dt class="fl">5份</dt>
+                            <dd class="r-small-star fl">
+                                <div class="r-small-star score" style="width:52.00px"></div>
+                            </dd>
+                        </dl>
+                        <div class="restaurant-state clearfix">                            
+                        </div>
+                    </article>
+                    <div class="close-favorite" data-rid="4549">√</div>
+                </li>            
+                -->
+               
+            
+        </ul>
+        
+    
+
+
+            </article>
+        </div>
+    </section>
+
+        </div>
+    </section>
+    <footer id="footer" class="">
+      <div class="footer-first gray">
+        <div class="company-info clearfix fs14 gray">
+          <div align="center"><a href="http://tel.xsdcm.cn" target="_blank" rel="nofollow">首页</a> <a href="http://zhaopin.xsdcm.cn" target="_blank" rel="nofollow">招聘</a> <a href="http://fangwu.xsdcm.cn" target="_blank" rel="nofollow">房屋</a> <a href="http://ershou.xsdcm.cn" target="_blank" rel="nofollow">二手</a> 
+          <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0415dac9da5e4f7d9fa9a4ad3c7fe6d292fccaaf7d720a0fc03d345312b6eea0"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="扎鲁特旗通讯录通讯录通讯录通讯录通讯录通讯录" title="扎鲁特旗通讯录通讯录通讯录通讯录通讯录通讯录"></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-last"> <a class="foot-logo-1 base-logo" href="#"></a>
+          <div class="tc fs14 light-gray mb10"> ©2015 </div>
+      </div>
+    </footer>
+    <div class="common-dialog ng-isolate-scope userFeedback scale50 op0" height="500" feeedbackclass="userFeedback" type="user-feedback" header="意见反馈" show="userFeedback" style="margin-left: -208px; margin-top: -250px;"><div class="fs16 header"><span ng-bind-html="to_trusted(title)" class="ng-binding">意见反馈</span><i ng-show="!hideclose" class="icon close-icon" ng-click="show=false"></i></div><div class="common-dialog-main" ng-transclude="">
+        <div ng-controller="feedbackCtrl" class="ng-scope">
+            <form novalidate="true" name="feedbackForm" class="inline ng-pristine ng-invalid ng-invalid-required">
+                <div class="form-group row mb10">
+                    <label class="col-3">联系方式：</label>
+                    <div class="col-8">
+                        <input type="text" maxlength="20" name="userContact" required="" ng-focus="userContactFocus()" ng-class="{error:feedback.phoneMessage}" placeholder="请输入您的手机号码" ng-model="feedback.userContact" class="ng-pristine ng-invalid ng-invalid-required">
+                    </div>
+                </div>
+                <div class="row mb10">
+                    <!-- ngIf: feedback.phoneMessage -->
+                </div>
+                <div class="form-group row">
+                    <label class="col-3 vt">反馈信息：</label>
+                    <div class="col-8">
+                        <textarea name="feedbackMessage" placeholder="可以说说您对外卖超人的意见" ng-focus="feedbacFocus()" required="" ng-class="{error:feedback.feedbackMessageTip}" ng-model="feedback.feedbackMessage" maxlength="300" cols="25" rows="7" class="ng-pristine ng-invalid ng-invalid-required"></textarea>
+                    </div>
+                </div>
+                <div class="row mb10">
+                    <!-- ngIf: feedback.feedbackMessageTip -->
+                </div>
+                <div class="tc">
+                    <button class="btn normal-btn btn-success" ng-click="feedbackSubmit()">确认</button>
+                    <button class="btn normal-btn btn-cancel" ng-click="feedbackCancel()">取消</button>
+                </div>
+            </form>
+        </div>
+        <div class="common-dialog-footer ng-scope">
+            咨询加QQ群：337212031
+        </div>
+    </div></div>
+    
+    <div class="common-dialog ng-isolate-scope scale50 op0" type="alert" index="1001" header="" show="errorShow" style="z-index: 1002; margin-left: -168px; margin-top: -56.5px;"><div class="fs16 header"><span ng-bind-html="to_trusted(title)" class="ng-binding"></span><i ng-show="!hideclose" class="icon close-icon" ng-click="show=false"></i></div><div class="common-dialog-main" ng-transclude="">
+        <div class="alert-box error ng-scope">
+            <p ng-bind="errorMsg" class="ng-binding"></p>
+        </div>
+    </div></div>
+
+     <ul class="site-fixed">
+        <li class="scroll-top"><img src="Public/favorite_files/scroll_top1.png" alt=""> </li>
+        <li class="scorll-feekback" ng-click="userFeedback=true">
+            <img src="Public/favorite_files/scorll_feekback.png" alt="">
+            <div>意见反馈</div>
+        </li>
+        <li class="scroll-wx">
+            <img src="Public/favorite_files/scroll_wx.png" alt="">
+             <div><img src="Public/favorite_files/wx.png" alt=""></div>
+        </li>
+    </ul>
+    
+    <script type="text/javascript" src="Public/favorite_files/angular.min.js"></script>
+    <script src="Public/favorite_files/common.js"></script>
+    
+     
+    <script src="Public/favorite_files/service.js"></script>
+    
+    <script>var feedbackUrl = '/ajax/feedback/';var app = angular.module("app", ["dh.dialog", "dh.form", 'dh.service', 'dh.other']);</script>
+    <!--[if lt IE 9]><script src="/static/desktop/js/fix.js"></script><![endif]-->
+    
+    
+    <script>
+        var reviewUrl = "/mobile/ajax/order_review/",favoriteUrl = "/ajax/restaurant/0/favorite/";
+    </script>
+    <script src="Public/favorite_files/user_center.js"></script>
+
+    
+    <script>angular.bootstrap(document, ["app"]);</script><div id="layer1" class="common-layer"></div><div id="layer2" class="common-layer" style="z-index: 1001;"></div>
+
+    <!-- Baidu Analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb08133fca4b479f2617c7d0dd8c312a6' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="Public/favorite_files/h.js" type="text/javascript"></script>
+<!-- End Baidu Tracking Code -->
+
+<!-- Baidu Remarketing code -->
+<script type="text/javascript">
+<!--
+(function (d) {
+window.bd_cpro_rtid="rHDzrHT";
+var s = d.createElement("script");s.type = "text/javascript";s.async = true;s.src = location.protocol + "//cpro.baidu.com/cpro/ui/rt.js";
+var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
+})(document);
+//-->
+</script>
+<!-- End Baidu Remarketing code -->
+
+<!-- Google Analytics Code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-33138478-1', 'waimaichaoren.com');
+  ga('send', 'pageview');
+  ga('require', 'ecommerce', 'ecommerce.js');
+</script>
+<!-- End Google Analytics Code -->
+
+
+
+
+<style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style></body></html>

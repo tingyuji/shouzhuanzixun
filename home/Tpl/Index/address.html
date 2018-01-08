@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://waimaichaoren.com/account/center/address/ -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}</style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="user-scalable=no">
+    
+    <meta name="google-site-verification" content="BstJA3X9z6f9HcvoN9AZTwaKo_9Abj_j7dVBPfy640s">
+    <meta name="baidu-site-verification" content="IYCrtVH0i1">
+    <meta property="wb:webmaster" content="239d3d1dbdde1b2c">
+    <link rel="icon" type="image/png" href="http://waimaichaoren.com/favicon.ico">
+    <script type="text/javascript" src="Public/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="Public/js/Cookies/src/cookies.min.js"></script>    
+    <script type="text/javascript" async="" src="./address_files/ecommerce.js"></script><script async="" src="./address_files/analytics.js"></script><script type="text/javascript" async="" src="./address_files/rt.js"></script><script charset="utf-8" src="./address_files/v.js"></script><script type="text/javascript">
+        
+        (function(document, screen) {if (screen.width < 760) {document.location.href="/mobile/";}}(document, screen));
+    </script>
+    
+    <link rel="stylesheet" href="http://waimaichaoren.com/static/desktop/css/common.css?v=2015-5-20">
+    
+    <link rel="stylesheet" href="http://waimaichaoren.com/static/desktop/css/user_center.css">
+
+    <!--[if lte IE 7]><script>window.onload=function(){location.href="/ie6warning/"}</script><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="/static/desktop/js/respond.js"></script>
+    <script>
+        var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video, dh-dialog, dh-checkbox".split(', ');
+         var i= e.length;while (i--){document.createElement(e[i])}
+    </script>
+    <![endif]-->
+    <title>个人中心</title>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        var userName = Cookies.get('username2');
+        if(typeof userName == "undefined"){
+          window.location.href="__URL__/login";
+        }
+        if(userName == ""){
+          window.location.href="__URL__/login";
+        }                
+        $('#userName').html(userName);
+        $.ajax({
+              type:'post',
+              url: '__URL__/getAllData6',
+              data:{
+                username:userName
+              },
+              async:false,
+              dataType:'json',
+              success:function(data){ 
+                    var items=data.rows;
+                    var point=items[0]['point'];
+                    var name=items[0]['name'];
+                    var telephone=items[0]['telephone'];
+                    var address=items[0]['address'];
+                    $('#username').html(userName);
+                    $('#name').html(name);
+                    $('#telephone').html(telephone);
+                    $('#address').html(address);
+
+              }
+        });     
+        $('#button').click(function(){
+            var name=$('#name2').val();
+            var telephone=$('#telephone2').val();
+            var address=$('#address2').val();
+            $.ajax({
+                url: '__URL__/updateData2',
+                type: 'post',
+                data: {
+                    username:userName,
+                    name: $('#name2').val(),
+                    telephone: $('#telephone2').val(),
+                    address: $('#address2').val()
+                },
+                async:false,
+                dataType: "text",
+                success: function(data){
+                      alert('提交成功');
+                      window.location.reload();
+                } 
+            });                
+        });            
+        
+
+    });
+    </script>    
+</head>
+<body class="night  ng-scope" ng-controller="bodyCtrl" day-or-night="">
+    <section class="common-back" id="wrapBackground">
+        
+            <header id="header">
+                <div class="common-width clearfix">
+                    <!--
+                    <h1 class="fl">
+                        <a class="logo base-logo" href="http://waimaichaoren.com/">外卖超人</a>
+                    </h1>
+                    -->
+                    
+                        <ul class="member logging" ng-init="loginInfo=true" style="margin-right:75px;">
+                            <li><a href="http://tel.xsdcm.cn" class="index">首页</a></li>
+                            <li class="userName">
+                                <a href="__URL__/manage" rel="nofollow" draw-user="">
+                                    <span id="userName">15107514080</span>
+                                </a>                       
+                            </li>                           
+    
+                        </ul>
+                    
+                </div>
+            </header>
+        
+        <div id="main-box">
+       
+        
+            <div ng-controller="colorAction" class="ng-scope">
+                <div class="dayColor_two"></div>
+                <div class="dayColor_one"></div>
+                <div class="dayColor_three dayColor_threeActive" ng-class="{dayColor_threeActive:threeActive}"></div>
+            </div>
+        
+            
+    <section>
+        <div class="user-center-main-box common-width clearfix">
+            <aside class="fl">
+                <ul>
+                    <li>
+                        <a href="__URL__/manage" rel="nofollow">账号管理</a>
+                    </li>
+                    <li>
+                        <a href="__URL__/orders" rel="nofollow">我的发布</a>
+                    </li>
+                    <li>
+                        <a href="__URL__/favorite" rel="nofollow">积分兑换</a>
+                    </li>
+                    <li class="active">
+                        <a href="__URL__/address" rel="nofollow">地址管理</a>
+                    </li>
+                   
+                </ul>
+            </aside>
+            <article class="fl user-center-main">
+                <header>地址管理</header>
+                
+    <section class="user-address-main">
+        <header>
+            <h2>当前默认地址</h2>
+        </header>
+        <article class="mb10">
+            <table>
+                <colgroup>
+                    <col width="100px">
+                    <col width="145px">
+                    <col width="407px">
+                    <col width="85px">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>账号</th>
+                        <th>收货人</th>
+                        <th>手机号码</th>
+                        <th>地址</th>                       
+                    </tr>
+                </thead>
+                <tbody><!-- ngRepeat: item in userAddressList --><tr ng-repeat="item in userAddressList" class="ng-scope">
+                    <td id="username" ng-bind="item.customer_name" class="ng-binding">eee</td>
+                    <td id="name" ng-bind="item.customer_name" class="ng-binding">eee</td>
+                    <td id="telephone" ng-bind="item.customer_phone" class="ng-binding">15107514080</td>
+                    <td id="address" ng-bind="item.delivery_address" class="ng-binding">e</td>
+
+                </tr><!-- end ngRepeat: item in userAddressList -->
+            </tbody></table>
+        </article>
+        <article ng-show="userAddressList.length &lt; 8" class="">
+            <header class="mb10">
+                <h2>修改地址</h2><strong></strong>
+            </header>
+            <section class="add-address-box">
+              
+                    <div class="form-group mb10 row">
+                        <label class="col-2">收货人：</label>
+                        <div class="col-6">
+                            <input id="name2" type="text" required="" maxlength="10" ng-class="{error:userAddressForm.submit &amp;&amp; userAddressForm.name.$invalid}" name="name" placeholder="如何称呼" ng-model="userAddress.customer_name" class="ng-pristine ng-invalid ng-invalid-required">
+                        </div>
+                        <!-- ngIf: userAddressForm.submit && userAddressForm.name.$invalid -->
+                    </div>
+                    <div class="form-group mb10 row">
+                        <label class="col-2">手机号码：</label>
+                        <div class="col-6">
+                            <input id="telephone2" type="text" maxlength="11" required="" mobile="" ng-class="{error:userAddressForm.submit &amp;&amp; userAddressForm.contact.$invalid}" name="contact" placeholder="138xxxxxxxx" ng-model="userAddress.customer_phone" class="ng-pristine ng-invalid ng-invalid-required">
+                        </div>
+                    </div>
+                    <div class="form-group mb30 row">
+                        <label class="col-2">地址：</label>
+                        <div class="col-6">
+                            <input id="address2" type="text" required="" ng-class="{error:userAddressForm.submit &amp;&amp; userAddressForm.address.$invalid}" name="address" placeholder="详细地址：如车田路13号" ng-model="userAddress.delivery_address" class="ng-pristine ng-invalid ng-invalid-required">
+                        </div>
+                        <!-- ngIf: (userAddressForm.submit && userAddressForm.address.$invalid) -->
+                    </div>
+                    <div class="form-group mb30 row">
+                        <label class="col-2"></label>
+                        <div class="col-8">
+                            <button id="button" class="btn btn-success normal-btn">
+                                提交修改
+                            </button>
+                        </div>
+                    </div>
+                
+            </section>
+        </article>
+    </section>
+
+
+            </article>
+        </div>
+    </section>
+
+        </div>
+    </section>
+    
+        <footer id="footer" class="">
+        <div class="footer-first gray">
+            <div class="company-info clearfix fs14 gray">
+                <a href="http://tel.xsdcm.cn" target="_blank" rel="nofollow">首页</a>
+                <a href="http://zhaopin.xsdcm.cn" target="_blank" rel="nofollow">招聘</a>
+                <a href="http://fangwu.xsdcm.cn" target="_blank" rel="nofollow">房屋</a>
+                <a href="http://ershou.xsdcm.cn" target="_blank" rel="nofollow">二手</a>
+
+          <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0415dac9da5e4f7d9fa9a4ad3c7fe6d292fccaaf7d720a0fc03d345312b6eea0"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="扎鲁特旗通讯录通讯录通讯录通讯录通讯录通讯录" title="扎鲁特旗通讯录通讯录通讯录通讯录通讯录通讯录"></a>                
+            </div>
+        </div>
+        <div class="footer-last">
+            <a class="foot-logo-1 base-logo" href="#"></a>
+            <div class="tc fs14 light-gray mb10">
+              ©2015
+            </div>
+        </div>
+    </footer>
+    

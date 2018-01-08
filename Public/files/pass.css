@@ -1,0 +1,200 @@
+body,h1,h2,h3,h4,blockquote,p,dl,dt,dd,ul,ol,li,th,td,form,fieldset,legend,button,input,textarea{margin:0;padding:0}body,button,input,select,textarea{font:12px/1.75 \5b8b\4f53,arial,sans-serif}button,input,select,textarea,h1,h2,h3,h4{font-size:100%}em,i{font-style:normal}ol,ul{list-style:none;list-style-position:outside}table{border-collapse:collapse;border-spacing:0}img,fieldset{border:0;vertical-align:middle}.clearfix:after{content:"\20";clear:both;height:0;display:block;overflow:hidden}.clearfix{*zoom:1}.clear{font-size:0; line-height:0; height:0; overflow:hidden; clear:both; visibility:hidden}a{color:#777;text-decoration:none;outline:none}a:hover{color:#f60;text-decoration:underline}.fl,.mark{float:left; display:inline}.fr,.subMark{float:right; display:inline}.spanclass,.contentdiv{display:none}
+
+.wrap{color:#777;}
+.main{width:990px;margin:0 auto;font-family:"微软雅黑";font-weight:400;}
+.content{padding:10px 0;min-height:400px;_height:400px;}
+.blue,.blue a{color:#05a;}
+.blue:hover,.blue a:hover{color:#f60;}
+.orange{color:#f60;}
+.f12{font-size: 12px;}
+.f14{font-size: 14px;}
+
+
+
+.header{height:97px;background-position:0 -99px;background-repeat:repeat-x;color:#333;}
+.header .logo{float:left;width:143px;height:53px;margin:5px 22px 0 0;background-position:0 0;}
+.header .mark{float:left;font:700 22px/70px "微软雅黑";height:65px;overflow:hidden;}
+.header .subMark{margin:21px 0 0;font-size:14px;line-height:26px;}
+.header .h_icon{width:19px;height:27px;float:left;margin-right:6px;background-position:0 -251px;}
+
+.inp{height:30px;border:1px solid #D2D2D2;padding:0 5px;width:255px;-moz-border-radius: 1px; -webkit-border-radius: 1px;border-radius:1px;line-height:29px\9; _line-height:30px;font-family:"微软雅黑";}
+.err{border-color:#d84b4b;}
+.inpA{width:162px;margin-right:4px;vertical-align:top;}
+.inpC{width: 129px;margin-right:4px;vertical-align:top;float: left;display: inline;}
+.inpBtn{background:url(http://www1.pcauto.com.cn/zt/20131021/pass/main.png) repeat-x 0 -57px;height:38px;color:#fff;font-size:16px;cursor:pointer;border:1px solid #e9880e;-moz-border-radius: 2px; -webkit-border-radius: 2px;border-radius:2px;font-family:"微软雅黑";}
+.inpBtnSend{background:#b2b2b2;border-color:#9f9f9f;}
+a.inpBtn{display: inline-block;text-align: center;line-height: 38px;}
+a.inpBtn:hover{color:#fff;text-decoration: none;}
+.checkbox{ vertical-align:-2px;margin-right:5px;}
+.row01Tips{color:#777;text-align: left;font: 400 12px/14px "微软雅黑";margin:0 0 0 114px;display: block;}
+
+.tip{float:left;}
+.tipCon{background:#fcf9de;border:1px solid #ecdc68;display:block;line-height:30px;padding:0 14px 0 10px;}
+.tip .row{background-position:-129px -183px;position:absolute;width:14px;height:30px;margin:0px 0 0 -4px;}
+.tTit{font-size:16px;color:#777;font-weight:400;text-align:right;padding:0 10px 0 0;height:52px;}
+.tTit2{height: 14px;}
+.tQQ em,.tSina em{width:15px;height:16px;display:inline-block; vertical-align:top;margin:9px 5px 0 0;float:left;}
+.tQQ em{background-position: -66px -251px;}
+.tSina em{background-position:-47px -251px;}
+
+.register{width:715px;border-right:1px solid #f2f2f2;float:left;padding-top:25px;min-height:430px;_height:430px;}
+.register .tTit{width:104px;}
+.register .iCol{width:280px;}
+.register .orangeIcon,.register .blueIcon{background-position: -23px -251px;display:block;width:19px;height:19px;float:left;margin-right:5px;}
+.register .redIcon{background-position:-86px -251px;display:block;width:19px;height:19px;float:left;margin-right:5px;}
+.register .inpBtn{width:263px;}
+.register .aChange{float:left;margin-right:10px;}
+.nameList{background:#fcf9de;width:267px;overflow:hidden;*zoom:1;font-family:"宋体";padding:0 0 10px;margin:-7px 0 0 114px;font-size:12px;text-align:left;line-height:22px;position:relative;}
+.nameList p{padding:0 0 0 8px;}
+.nameList label{float:left;margin:0 8px;*margin:0 5px;display:inline;}
+.nameList input{ vertical-align:-2px;margin-right:4px;}
+
+.otherLogon{float:left;font-size:14px;line-height:33px;width:243px;padding:30px 0 0 30px;color:#666;}
+.otherLogon .tQQ,.otherLogon .tSina{display:inline-block;width:100px;}
+.otherLogon .tQQ{}
+.otherLogon .pSubTit{border-top:1px solid #f2f2f2;margin:20px 0 0;padding-top:10px;}
+.otherLogon .phone{line-height:28px;border-bottom:1px solid #f2f2f2;padding:0 0 15px;margin-bottom:11px;}
+.otherLogon .phone p{white-space: nowrap;overflow: hidden;_width:243px;}
+.otherLogon .phoneIcon{background-position:0 -285px;float:left;width:23px;height:23px;margin:2px 5px 0 0;}
+.otherLogon .phone .pTit{font-size:15px;color:#333;font-weight:700;}
+
+.logonBox{width:338px;float:right;border-left:1px solid #f2f2f2;font-size:14px;padding-top:30px;height:432px;}
+.logonBox .inpBtn{width:267px;margin-top:10px;}
+.logonBox .tTit{width:62px;}
+.logonBox .row3{color:#333;}
+.logonBox .row3 .tTit{height:30px;}
+.logonBox .otherLogon{border-top:1px solid #f2f2f2;padding:18px 0 0 72px;margin-top:10px;width:266px;}
+.logonName{color:#aaa;}
+#recommend .tTit{*text-align: left;}
+.dPic{padding-top:55px;}
+
+.userName,.userEmail,.userPassword{padding-left:33px;width:227px;color:#aaa;}
+.userName{background-position:-121px -223px;}
+.userEmail{background-position:-115px -287px;}
+.userPassword{background-position:-120px -257px;}
+.userL,.userR{font-size:14px;}
+.userL{float:left;width:192px;padding:100px 0 0 241px;border-right:1px solid #f2f2f2;text-align:center;color:#333;line-height:30px;height:392px;}
+.userR{float:left;/* width:275px; */padding:93px 0 0 46px;}
+.userR p{margin-bottom:10px;}
+.userR .pTit{font-size:14px;color:#333;font-weight:700;margin-bottom:15px;}
+.userR input{margin-bottom:15px;}
+.userR .inpBtn{margin-bottom:10px;width:267px;}
+
+/*信息*/
+.infoBox{line-height:28px;margin:62px 0 0 250px;}
+.infoBox:after{content:"\20";clear:both;height:0;display:block;overflow:hidden}
+.infoBox .icon{background:url(http://www1.pcauto.com.cn/zt/20131021/pass/main.png) no-repeat;float:left;height:54px;width:54px;margin-right:13px;}
+.infoBox .emailIcon{background-position:-60px -182px;}
+.infoBox .succeedIcon{background-position:0 -182px;}
+.infoBox .failedIcon{background:url(http://www1.pconline.com.cn/center/20100727/images/tan.png) no-repeat;}
+.infoBox .infoTxt{overflow: hidden;zoom:1;}
+.infoBox .tit{font-weight:700;font-size:18px;color:#333;}
+.infoBox .f14{color:#333;font-weight: 700;}
+.infoBox .email{color:#ff8100;font-weight:400;}
+.infoBox .meg,.infoBox .subTit{font-size:14px;}
+.infoBox .subTit{font-weight:700;}
+.infoBox .inpBtn{width:128px;margin-right:10px; vertical-align:middle;}
+.infoBox a.inpBtn{display: inline-block;text-align: center;line-height: 38px;}
+.infoBox a.inpBtn:hover{color:#fff;text-decoration: none;}
+.infoBox .subMeg{line-height:32px;padding-left:13px;text-indent:-13px;}
+.infoBox .dBtn{margin:13px 0 20px;}
+
+/*找密码*/
+.findBox{margin-left:300px;padding-top:62px;}
+.findBox .inpBtn{width:105px;height: 31px;line-height: 29px;}
+.findBox .inp{font-size:14px;}
+.findBox label{color:#666;width: 60px;text-align: right;padding-right:10px; height: 32px;line-height: 32px;float: left;font-size: 14px;white-space: nowrap;}
+.findBox input{margin-bottom:20px;}
+.findBox .pTit{font-size:14px;color:#333;font-weight:700;margin-bottom:15px;}
+.findBox .pTit i{color:#f30;font-weight: 400;}
+.findBox img{margin-right:15px;}
+
+/*流程条*/
+.flow{width: 772px;height: 51px;margin:34px auto 0;background:url(http://www1.pcauto.com.cn/zt/20131021/pass/flow.jpg) no-repeat;}
+.flow2{background-position: 0 -51px;}
+.flow3{background-position: 0 -102px;}
+.flow4{background-position: 0 -153px;}
+
+/*手机验证*/
+.tel_check{}
+.pl70{padding-left:70px; }
+.ml100{margin-left: 100px;}
+.tel_check .pTit{font-size: 14px;white-space: nowrap;}
+.tel_check input{margin-bottom:10px;}
+#setTime .verBut{width: 120px;background:#f6f6f6;color:#333;height: 32px;line-height: 32px;display: block;margin-left: 70px;margin-bottom: 15px;border:1px #d2d2d2 solid;border-radius: 2px;text-align: center;text-decoration: none;}
+#setTime input.w{background:#f6f6f6;color:#999;}
+
+
+/*设新密码*/
+.pWord .pTit{font-size: 14px;white-space: nowrap;}
+
+.register #setTime .verBut{width: 120px;height: 32px;line-height: 32px;background:#ededed;border-color:#d2d2d2;color:#777;margin:0;float: left;}
+.register #setTime input.w{color:#999;}
+/*登录*/
+.rTips{color:#f30;height: 32px;line-height: 32px;overflow: hidden;display: block;}
+.userR .rTips{color:#f30;}
+.userR i.red{color:#f30;margin-left: 10px;line-height: 30px;display: inline-block;}
+/*解除绑定*/
+/*#postform div:after{content:"\20";clear:both;height:0;display:block;overflow:hidden}*/
+#postform div{position: relative;}
+/*#postform .inp{float: left;margin-right: 10px;}*/
+#postform .inpA{margin-right: 4px;}
+.mlpl{margin-left: -10px;}
+.mlpl label{width: 70px;}
+.dzyx span{font:14px/32px '微软雅黑';margin-bottom: 20px;display: block;}
+/*更改邮箱地址*/
+table .dEmail input{margin-bottom: 0;}
+#tagOne .dBtn a{_position: absolute;_margin-top:6px;}
+.iepa{_position: absolute;}
+.kfTips{position:absolute;clear:both;margin-left: 10px;_top:0;_left:270px;*display: inline;}
+#bindForm{_position: relative;}
+#bindForm .pTit,#bindForm .dName,#bindForm .dPassword,#bindForm .dBtn,#haveAccount .psubTit{_zoom:1;}
+#haveAccount{_position: absolute;}
+
+/*焦点图轮播*/
+.focus{float:left;width:600px;height:400px;margin-top:55px;overflow:hidden}
+.focus ul{width:600px;height:400px}
+.focus li{display:none}
+
+/*弹框样式*/
+/*浮动弹窗*/
+.maskDiv{ position:absolute; background-color:#CCCCCC; top:0px; left:0px; display:none; opacity:0.5; filter:alpha(opacity=50)}
+.floatDiv{ color:#333333;position:absolute;z-index:1001;}
+.floatDiv .bgFilter{ padding:5px; background-color:rgba(0,0,0,0.3);background-color:#b2b2b2\9; overflow:hidden; position:relative; z-index:2; border-radius:5px}
+.floatDiv .iframe{ background-color:transparent; position:absolute; top:0px; left:0px; z-index:0; border:0; margin:0;}
+.iframeBox{ background-color:#fff; overflow:hidden; clear:both;}
+#floatBoxBg {background:none repeat scroll 0 0 #000000;display:none;height:100%;left:0;position:absolute;top:0;width:100%;z-index:1000;}
+
+.fixCenter{ position:absolute;}
+.fgray{ color:#787878;}
+.fTit{ height:30px; border-bottom:1px solid #cdcdcd; clear:both; cursor:move;}
+.fmark{ float:left; /*padding:8px 0px 0px 10px;line-height:14px;*/  padding-left: 10px;line-height: 30px;vertical-align:top; color:#333; font-weight:bold; font-size:14px;}
+.ofdden{ overflow:hidden; text-indent:-9999px;}
+.fBoxA{ width:160px; display:none}
+.fBoxA .conBox{ height:53px; text-align:center;}
+.fsuc_publish,.fsuc_reply,.fsuc_send,.fsuc_save{ width:134px; height:20px; display:block; margin:16px auto 0px;}
+.fsuc_publish{ background:url(http://www1.pcauto.com.cn/2011/usercenter/images/icon_success.png) 0 0 no-repeat;}
+.fsuc_reply{ background:url(http://www1.pcauto.com.cn/2011/usercenter/images/icon_success.png) 0 -20px no-repeat;}
+.fsuc_send{ background:url(http://www1.pcauto.com.cn/2011/usercenter/images/icon_success.png) 0 -40px no-repeat;}
+.fsuc_save{ background:url(http://www1.pcauto.com.cn/2011/usercenter/images/icon_success.png) 0 -60px no-repeat; }
+.floatDiv .conBox{ border:1px solid #909090; background:#fff}
+.fclose{ float:right; display:inline-block; margin:5px 5px 0 0; width:18px; height:18px; background:url(http://www1.pcauto.com.cn/bbs/cargroup/2014/images/photo_main.png) -88px 0 no-repeat;}
+.fclose:hover{ background:url(http://www1.pcauto.com.cn/bbs/cargroup/2014/images/photo_main.png) -88px -19px no-repeat;}
+.fCon p{ line-height:20px; padding-top:10px}
+.fCon .setP{padding:10px 0 18px 83px; margin-top:10px;}
+.blank20px {clear: both;display: block;font-size: 1px;height: 20px;line-height: 20px;overflow: hidden;}
+.blank5px {clear: both;display: block;font-size: 1px;height: 5px;line-height: 5px;overflow: hidden;}
+.fBoxB .conBox {height: 168px;}
+.fBoxB .fCon {height: 105px;}
+.fBoxC .conBox {height: 231px;}
+.fBoxC .fCon {height: 163px;}
+.fBoxD .conBox {height: 138px;}
+.fBoxD .fCon {height: 70px; padding:30px 30px 0;overflow:hidden}
+.fBoxE .conBox {height: auto !important;min-height: 480px;}
+.fBoxE .fCon{ height:230px; padding-top:30px}
+.pLR15 {padding: 0 15px;}
+body .footBtn {height:40px;text-align: right; background:#f2f2f2;border-top:1px solid #cdcdcd;}
+.footBtn .fBtn {background: none repeat scroll 0 0 #FF8E00;border: 0 none;color: #FFFFFF;display: inline-block;height: 24px;line-height:24px;text-align: center;text-decoration: none;width:87px; margin:5px 8px 0 0;}
+.footBtn .fBtn:hover {text-decoration: none;}
+.footBtn .fBtnA{ background:#dfdfdf; color:#777; margin-right:10px}
+.fNotice {background: url(http://www1.pcauto.com.cn/bbs/cargroup/2014/images/photo_main.png) no-repeat -168px -36px;line-height: 27px;padding-left: 41px;}

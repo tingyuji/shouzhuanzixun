@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://m.tlzx.cc/tel/reply.aspx?txt=12345 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <title>添加电话-扎鲁特旗通讯录</title>
+    <link rel="stylesheet" type="text/css" href="Public/reply_files/common.v2.css">
+    <link rel="stylesheet" type="text/css" href="Public/reply_files/common.css">
+    <script type="text/javascript" src="Public/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="Public/js/Cookies/src/cookies.min.js"></script>
+    <script type="text/javascript" src="Public/reply_files/common.v2.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        var userName = Cookies.get('username2');
+        if(typeof userName == "undefined"){
+          userName='未知';
+        }
+        if(userName == ""){
+          userName='未知';
+        }                
+        
+        $('#button').click(function(){
+                var tel=$("#tel").val();
+                if ($("#tel").val() == "") {
+                    errorFun("请先输入手机号!");
+                    $("#tel").focus();
+                    return false;
+                }
+                var telreg = /^1[3458]\d{9}$/;
+                if (!telreg.exec(tel)){
+                   errorFun("手机格式不对!");
+                   $("#tel").focus();
+                   return false;
+                }                
+                if ($("#name").val() == "") {
+                    errorFun("请先输入商家名!");
+                    $("#name").focus();
+                    return false;
+                }  
+                                      
+                $.ajax({
+                      type:'post',
+                      url: '__URL__/addData2',
+                      data:{
+                        telephone:jQuery.trim($('#tel').val()),
+                        contacter:jQuery.trim($('#name').val()),
+                        seller:jQuery.trim($('#name').val()),                     
+                        address:jQuery.trim($('#address').val()),
+                        userName:userName,
+                        point:300
+                      },
+                      async:false,
+                      success:function(msg){ 
+                        errorFun("信息提交成功,请等待管理员审核!");
+			       setTimeout("window.location.href='__URL__/index'", 5000 )
+						
+                      }
+                });
+            });
+    });
+    </script>
+</head>
+<body>
+    
+<header>
+    <dl class="hdcontent">
+        <dd class="toback"><a onClick="fback()"></a></dd>
+        <!--
+        <dd class="hduser">        
+            <a href="http://m.tlzx.cc/login/?reurl=/tel/reply.aspx?txt=12345" rel="nofollow"><i class="off"></i></a>            
+        </dd>
+        -->
+        <!--
+        <dd class="hdnav"><a onclick="shownav()"></a></dd>
+        -->
+        
+        <dt>添加电话</dt>
+    </dl>
+    <div id="hdnav-cont">
+        <span></span>
+        <ul id="TopCss1_top"><li><a class="ind" href="http://m.tlzx.cc/"><i></i></a>首页</li><li><a class="news" href="http://m.tlzx.cc/news/"><i></i></a>热点资讯</li><li><a class="bbs" href="http://m.tlzx.cc/bbs/"><i></i></a>逛论坛</li><li><a class="post" href="http://m.tlzx.cc/post/"><i></i></a>分类信息</li><li><a class="tel" href="http://m.tlzx.cc/tel/"><i></i></a>电话簿</li><li><a class="stor" href="http://m.tlzx.cc/store/"><i></i></a>找商家</li><li><a class="tuan" href="http://m.tlzx.cc/tuan/"><i></i></a>本地团购</li><li><a class="job" href="http://m.tlzx.cc/post/zhaopin/"><i></i></a>找工作</li><li><a class="house" href="http://m.tlzx.cc/post/fangwu/"><i></i></a>找房子</li><li><a class="xlp" href="http://m.tlzx.cc/post/xinloupan/"><i></i></a>新楼盘</li></ul>
+    </div>
+</header>
+<script type="text/javascript">
+    function fback() {
+        if (window.history.length > 0) {
+            window.history.back()
+        }
+        else {
+            window.location.href = "#"
+        }
+    }
+</script>
+
+    <secetion>
+        <div class="contact_warp">
+        <div class="err_tip" id="err">请输入添加信息</div>
+
+	    <ul>
+        <li><span class="l">名称:</span><span class="r">
+            <input name="name" type="text" class="input01" maxlength="50" id="name" value="">
+        </span>
+        </li>
+        <li><span class="l">电话:</span><span class="r">
+            <input name="tel" type="text" class="input01" maxlength="50" id="tel" value="">
+        </span>
+        </li>
+        <li><span class="l">地址:</span><span class="r">
+            <input name="email" type="text" class="input01" maxlength="50" id="address" value="">
+        </span>
+        </li>       
+
+  
+        <li class="noborder">
+            <input name="button" type="button" class="sub" id="button" value="确认提交">
+        </li>
+        </ul>
+
+       </div>
+    </secetion>
+    
+<footer>
+  <div class="fotibc" style="margin:5px;padding-bottom:5px;"> <span>本站版权归[029100.Com]所有|合作电话:13947550199</span> </div>
+</footer>
+
+
+
+
+<div id="toTop"><i></i></div><style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style>
+<input type="hidden" id="keyword" value="{$keyword}"/>
+</body>
+</html>

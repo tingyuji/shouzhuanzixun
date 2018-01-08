@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0056)http://m.tlzx.cc/reg/phonereg.aspx?reurl=/tel/index.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <title>扎鲁特旗通讯录通讯录通讯录通讯录通讯录通讯录</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="Public/reg_files/common.v2.css">
+    <link rel="stylesheet" type="text/css" href="Public/reg_files/comons.css">
+    <link rel="stylesheet" type="text/css" href="Public/reg_files/store.css">
+    <script type="text/javascript" src="Public/reg_files/jquery.js"></script>
+    <script type="text/javascript" src="Public/js/Cookies/src/cookies.min.js"></script>
+    <script type="text/javascript" src="Public/reg_files/common.v2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#ok').click(function(){
+                var username=$('#username').val();
+                if(username==''){
+                    alert('请输入用户名');
+                    return;
+                }
+                var password=$('#password').val();
+                if(password==''){
+                    alert('请输入密码');
+                    return;
+                }                 
+                var username=$('#username').val();
+                var password=$('#password').val();
+                $.ajax({
+                    url: '__URL__/addData3',
+                    type: 'post',
+                    data: {
+                        username: $('#username').val(),
+                        password: $('#password').val()
+                    },
+                    async:false,
+                    dataType: "text",
+                    success: function(data){
+                          if(data.indexOf('成功')!=-1){
+                             alert(data);
+                             Cookies.set('username2',username, { expires: 96400 }); 
+                             window.location.href='__URL__/manage';
+
+                          }
+                          alert(data);
+
+                          
+                       } 
+                });                
+            });
+           
+        });
+    </script>
+</head>
+<body>
+   
+<header>
+    <dl class="hdcontent">
+        <dd class="toback"><a onclick="fback()"></a></dd>
+        <dd class="hduser">
+        
+            <a href="__URL__/index" rel="nofollow"><i class="off"></i></a>
+            
+        </dd>
+
+        <dd class="hdnav">
+            <a href="__URL__/ugc"><i class="off"></i></a>        
+        </dd>
+        
+        <dt>用户注册</dt>
+    </dl>
+    <div id="hdnav-cont">
+        <span></span>
+        <!--
+        <ul id="TopCss1_top"><li><a class="ind" href="http://m.tlzx.cc/"><i></i></a>首页</li><li><a class="news" href="http://m.tlzx.cc/news/"><i></i></a>热点资讯</li><li><a class="bbs" href="http://m.tlzx.cc/bbs/"><i></i></a>逛论坛</li><li><a class="post" href="http://m.tlzx.cc/post/"><i></i></a>分类信息</li><li><a class="tel" href="http://m.tlzx.cc/tel/"><i></i></a>电话簿</li><li><a class="stor" href="http://m.tlzx.cc/store/"><i></i></a>找商家</li><li><a class="tuan" href="http://m.tlzx.cc/tuan/"><i></i></a>本地团购</li><li><a class="job" href="http://m.tlzx.cc/post/zhaopin/"><i></i></a>找工作</li><li><a class="house" href="http://m.tlzx.cc/post/fangwu/"><i></i></a>找房子</li><li><a class="xlp" href="http://m.tlzx.cc/post/xinloupan/"><i></i></a>新楼盘</li></ul>
+        -->
+    </div>
+</header>
+<script type="text/javascript">
+    function fback() {
+        if (window.history.length > 0) {
+            window.history.back()
+        }
+        else {
+            window.location.href = "/index.aspx"
+        }
+    }
+</script>
+
+   <div class="container">
+        <!--
+        <ul class="actab">
+            <li><a class="cur" rel="nofollow">手机注册</a></li>
+            <li><a href="http://m.tlzx.cc/reg/reg.aspx?reurl=/tel/index.aspx">快速注册</a></li>
+        </ul>
+        -->
+        <div class="formwrap">
+            <!--<form name="account_login" action="" method="post">-->
+                <i class="phonicon"></i>
+                <div class="phonwrap"><input id="username" name="username" type="text" placeholder="用户名" class="textype" maxlength="11">
+                </div>
+                <i class="codeicon"></i><input id="password" name="password" type="text" placeholder="密码" maxlength="6" class="textype">
+                <!--
+                <input type="submit" name="Save" value="提交注册" onclick="return subcheck();" class="subotom">
+                -->
+                <input type="submit" name="Save" value="提交注册" id="ok" class="subotom">
+            <!--</form>-->
+            <div class="qqlogin"><a href="__URL__/login" class="blue">已有账号，立即登录</a></div>
+        </div>
+    </div>
+    
+<footer>
+
+     <div class="fotibc"><span>©2015 粤ICP备14080186号-1</span></div>
+</footer>
+
+
+
+    <script type="text/javascript">
+        $(".textype").focus(function () {
+            $(this).removeClass("errtxt");
+        })
+        function subcheck() {
+            if (!RegExp("^(1[3|4|5|8])[0-9]{9}$").test($("#phone").val())) {
+                errorFun("手机号不正确!");
+                    $("#phone").addClass("errtxt");
+                    return false
+                }
+                if ($("#codestr").val() == "") {
+                    errorFun("验证码不能为空!");
+                    $("#codestr").addClass("errtxt");
+                    return false;
+                }
+                if ($("#codestr").val().length != 6) {
+                    errorFun("请输入正确的验证码!");
+                    $("#codestr").addClass("errtxt");
+                    return false;
+                }
+                if (!RegExp("^\d*").test($("#codestr").val())) {
+                    errorFun("请输入正确的验证码!");
+                    $("#codestr").addClass("errtxt");
+                    return false;
+                }
+                errorFun("<img src='http://img.ccoo.cn/wap/images/load.gif' />正在验证…");
+                $("#account_login").submit();
+                return true;
+            }
+        //20150214ByFlora    
+/*        $('#sendyzm').click(function () {
+            if ($("#phone").val() == "" || !RegExp("^(1[3|4|5|8])[0-9]{9}$").test($("#phone").val())) {
+                $("#phone").addClass("errtxt");
+                errorFun("请输入正确的手机号！");
+                return false;
+            }
+            var _this = $(this);
+            $(this).attr({ 'disabled': true });
+            var s = 180;
+            errorFun("<img src='http://img.ccoo.cn/wap/images/load.gif' />发送中，请稍后...");
+            var stimer = setInterval(function () {
+                s--;
+                _this.val(s + '秒后可重发');
+                if (s == 0) {
+                    clearInterval(stimer);
+                    _this.val('重新发送');
+                    _this.attr('disabled', false);
+                    s = 180;
+                }
+            }, 1000);
+
+            $.ajax({
+                type: "post",
+                url: "/Handler/Users/SendMsg.ashx",
+                data: { tel: $("#phone").val(), Ot: 6 },
+                success: function (data) {
+                    if (data == "1000") {
+                        errorFun("发送成功，请等待短信通知！");
+                    } else {
+                        clearInterval(stimer);
+                        _this.val('重新发送');
+                        errorFun(data);
+                        _this.attr('disabled', false);
+                    }
+                }
+            });
+        })*/
+    </script>
+
+
+<div id="toTop"><i></i></div><style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254416569'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/stat.php%3Fid%3D1254416569%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+</body>
+</html>

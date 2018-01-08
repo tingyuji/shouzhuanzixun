@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>短信测试</title>
+</head>
+<body>
+<form name="form1" action="http://yunpian.com/v1/sms/send.json" method="post">
+    <table>
+        <tr>
+            <th>参数名</th>
+            <th align="left">参数值</th>
+        </tr>
+        <tr>
+            <td>apikey:</td>
+            <td><input name="apikey" type="text" id="apikey" size="40" value="e6976b2b2cd2cf403a058c25d00bb559"></td>
+        </tr>
+        <tr>
+            <td>手机号:</td>
+            <td><input name="mobile" type="text" id="mobile" /></td>
+        </tr>
+        <tr>
+            <td>短信内容:</td>
+            <td><textarea name="text" cols="70" rows="2" id="text" >您的验证码是1234</textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" name="Submit" value="发送" /></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

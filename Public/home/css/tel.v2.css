@@ -1,0 +1,88 @@
+﻿.bor_radius{background:#fff;border-radius:3px;-webkit-border-radius:3px;-ms-border-radius:3px;box-shadow:0 0 4px rgba(0,0,0,0.3);-webkit-box-shadow:0 0 4px rgba(0,0,0,0.3);-ms-box-shadow:0 0 4px rgba(0,0,0,0.3)}
+input{font-family:"微软雅黑"}
+.telsobox,.adver{background:#FFF url(/Public/images/sotelbg.jpg);position:relative;padding:0 10px;margin-bottom:15px;height:136px;}
+.telsobox::after,.adver::after{content:"";position:absolute;box-shadow:0 15px 10px rgba(0, 0, 0, 0.2);-webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.2);-ms-box-shadow:0 15px 10px rgba(0, 0, 0, 0.2);width:100%;height:5px;border-radius:100%;-webkit-border-radius:100%;-ms-border-radius:100%;left:0;bottom:16px;z-index:-1}
+.search{width:100%;display:table}
+.search li{display:table-cell}
+.search li:last-child{width:70px}
+.inp_srh{width:100%;box-sizing:border-box;height:38px; line-height:38px;border:2px solid #4AAEE0;border-radius:3px 0 0 3px;font-size:16px; border-right:none; text-indent:5px;}
+.but_srh{width:75px;height:38px;border-radius:0 3px 3px 0;background:-webkit-gradient(linear,0 0,0 100%,from(#55BAE3),to(#44A7DE));background:-ms-linear-gradient(top,#55BAE3,#44A7DE);background:-linear-gradient(top,#55BAE3,#44A7DE);color:#fff; border:none;}
+.teltxt{text-align:center; line-height:50px; color:#44A7DE; font-size:20px; font-weight:bold;}
+.telmsg{font-size:14px; line-height:40px; color:#666; padding:8px 0 0;}
+#telsobox{position:relative;}
+#telsobox #srhword{top:38px; margin:0 10px; left:-10px; background:#FFF;-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.3);border-radius:0 0 3px 3px; font-size:16px;}
+#telsobox #srhword li:last-child{background:#f6f6f6;border-radius:0 0 3px 3px;}
+.boxshow{margin:0 10px 15px;}
+.boxshow h4{height:38px;line-height:38px;font-weight:normal;font-size:16px;border-bottom:1px solid #e2e2e2;padding:0 10px;position:relative;background:-webkit-gradient(linear,0 0,0 100%,from(#F9F9F9),to(#F8F8F8));}
+.boxshow h4:first-child{border-radius:4px 4px 0 0;}
+.boxshow h4 span{float:right;font-size:14px;color:#06c}
+.boxshow h4 i{position:absolute;top:17px;right:15px;width:10px;height:10px;border-top:2px solid #b5b5b5;border-left:2px solid #b5b5b5;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);cursor:pointer;-webkit-transition: all 0.3s ease 0s;-ms-transition: all 0.3s ease 0s}
+.boxshow ul{overflow:auto;margin:0 6px;border-bottom:1px dotted #ccc}
+.boxshow ul:last-child{border-bottom:none}
+.boxshow ul li{height:33px;line-height:33px;padding:8px 0;float:left;width:33.333%;text-align:center; overflow:hidden;}
+.boxshow ul li:last-child a{border-right:none}
+.boxshow ul a{border-right:1px dotted #ccc;display:block;width:100%;box-sizing:border-box;color:#06c;font-size:16px}
+.boxshow h4 i.hide{-webkit-transform:rotate(-135deg);-ms-transform:rotate(-135deg);transform:rotate(-135deg);top:12px}
+#kindbox div{border-bottom:1px solid #e2e2e2;}
+#kindbox div:last-child{display:none;border-top:1px solid #e2e2e2;border-bottom:none;border-radius:0 0 4px 4px;}
+#kindbox h4.kindall{border-radius:0 0 4px 4px; border:none;}
+/*掌上通讯录列表*/
+#selctebox{position:relative;z-index:1;}
+.tel_list{padding:15px 10px 0}
+.tel_list li{box-shadow:0 0 10px rgba(0,0,0,0.1);-webkit-box-shadow:0 0 10px rgba(0,0,0,0.1);-ms-box-shadow:0 0 10px rgba(0,0,0,0.1);background:#fff;margin-bottom:15px;padding:10px 70px 10px 10px; position:relative;}
+.tel_list li.new{background:#ffffe6}
+.tel_list li a:hover span{color:#f00}
+.tel_list li a:last-child{width:60px;height:60px;text-indent:-9999px;background:url(../images/tel-icon.png) 15px 3px no-repeat; position:absolute; right:10px; top:10px;}
+.lxname{font-weight:normal;font-size:18px;color:#333;margin-bottom:10px;position:relative;min-height:24px;float:left;padding-right:35px;}
+.lxname span{display:block;min-height:23px;}
+.lxname i{display:block;position:absolute;top:3px;right:0px;height:17px;line-height:17px;border-radius:1px;width:24px;padding:0 3px;font-style:normal;font-size:12px;color:#fff; text-align:center;}
+.lxname i:before{content:"";border-width:0 4px 5px;border-style:solid;width:0;height:0;line-height:0; position:absolute; left:-3px; bottom:0px;}
+.lxname i.vip:before{border-color:transparent transparent #c63;}
+.lxname i.sjb:before{border-color:transparent transparent #f60;}
+.lxname i.hy:before{border-color:transparent transparent #f90;}
+.lxname i.vip{background:#c63; z-index:3;}
+.lxname i.sjb{background:#f60; z-index:2;}
+.lxname i.hy{background:#f90; z-index:1;}
+.tel_list p{font-size:14px;color:#999;clear:left}
+.name_tel{display:block;}
+.stor_page {margin:10px;border:1px solid #E0E0E0;height:38px;background:white;line-height:38px;text-align:center;font-size:16px}
+#srhword{display:none;position:absolute;left:0;top:-408px;z-index:20;width:100%;background:#f6f6f6;-webkit-transition-property:all;-webkit-transition-duration:500ms;}
+#srhword li{height:40px;line-height:40px;border-bottom:1px dotted #ccc;padding-left:10px; overflow:hidden;}
+#srhword li a{display:table;width:100%;}
+#srhword li span{display:table-cell;color:#666}
+#srhword li i{display:table-cell;width:45px;height:40px;background:url(../images/stor_ioc.png) 15px -229px no-repeat; background-size:19px auto;}
+#srhword li:last-child{display:block;border:none;}
+#srhword #operate span{color:#06c}
+#srhword li:last-child i{font-style:normal;font-size:16px;color:#999;background:none;float:right;position:relative;padding-left:18px}
+#srhword #operate i:before{content:"";position:absolute;top:20px;left:0;width:8px;height:8px;border-top:2px solid #bbb;border-left:2px solid #bbb;-webkit-transform:rotate(45deg)}
+.telnull{font-size:16px; text-align:center; line-height:25px; margin-bottom:15px;}
+.telnull a{color:#666;}
+.telnull a u{color:#06C; font-variant:small-caps;}
+/*掌上通讯录详情页*/
+.dethead{padding:15px 10px;background:#fff;border-bottom:1px solid #ebebeb;}
+.rztel{background:#fff url(../images/renz.png) right center no-repeat;}
+.dethead .lxname span{font-size:20px; font-weight:bold;}
+.dethead p{clear:both;color:#999;font-size:14px}
+.detbuts{background:#FAFAFA;padding:0 10px;box-sizing:border-box;height:43px;position:relative}
+.detbuts li{color:#666;font-size:14px; float:right; height:43px; line-height:43px;background:url(../images/tel-icon.png) no-repeat;}
+.detbuts li:first-child{float:left; background-position:0 -237px;padding-left:26px; background-size:43px auto;}
+.detbuts li.sharesj{width:40px; background-position:0 -115px;padding-left:26px; background-size:43px auto;}
+.detbuts li#collect{background-position:0 -149px;padding-left:25px; background-size:41px auto;}
+.detbuts li#collect.cancelsc{background-position:0 -189px}
+.detbuts::after{content:"";position:absolute;box-shadow:0 15px 10px rgba(0, 0, 0, 0.25);-webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.25);-ms-box-shadow:0 15px 10px rgba(0, 0, 0, 0.25);width:100%;height:8px;border-radius:100%;-webkit-border-radius:100%;-ms-border-radius:100%;left:0;bottom:16px;z-index:-1}
+.tel_num{margin:15px 10px}
+.tel_num li{position:relative;height:60px;line-height:60px;padding-left:10px;font-weight:bold;border-bottom:1px solid #e2e2e2}
+.tel_num li:last-child{border-bottom:none;}
+.tel_num li a{color:#c00;text-decoration:none;font-size:20px;}
+.tel_num li a.a_sms{height:60px;width:45px;position:absolute;background:url(../images/tel-icon.png) 0 -57px no-repeat;background-size:45px auto;right:70px;}
+.tel_num li a.a_phone{height:60px;width:45px;position:absolute;background:url(../images/tel-icon.png) 0 8px no-repeat;background-size:45px auto;right:10px;}
+.explatxt{text-align:center;font-size:14px;color:#999; line-height:26px; padding:3px 0;}
+.moretel{margin:15px 10px;height:37px;line-height:37px;color:#666;font-size:16px;text-align:center;display:block}
+.indebox{display:table; width:98%; margin:0 auto;}
+.indebox li{display:table-cell;}
+.indebox a{display:block;text-align:center;padding:0 7px;height:37px;line-height:37px;background:#F90;font-size:16px;color:#fff;border-radius:2px;-webkit-border-radius:2px;-ms-border-radius:2px;margin:8px 5px 0;box-shadow:0 1px 3px rgba(148,99,33,0.3);}
+
+#jiucuobox{padding:0 15px 5px; font-size:16px; line-height:30px;}
+#jiucuobox input[type="checkbox"]{margin-right:5px; vertical-align:middle;}
+#jiucuobox input[type="text"]{width:99%; margin:5px 0; font-size:16px; color:#333; height:26px; line-height:26px; border:1px solid #CCC; padding:5px 0;}
+#jcbutm{width:50%;height:35px;border:none;border-radius:3px;-webkit-border-radius:3px;-ms-border-radius:3px;background:-webkit-gradient(linear,0 0,0 100%,from(#949FB7),to(#8992A8));background:-ms-linear-gradient(0 0,0 100%,from(#949FB7),to(#8992A8));background:linear-gradient(0 0,0 100%,from(#949FB7),to(#8992A8));font-family:"微软雅黑";color:#fff;font-size:18px; margin:10px auto 0; display:block;}

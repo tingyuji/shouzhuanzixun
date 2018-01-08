@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<!-- saved from url=(0170)http://qzs.qq.com/qzone/biz/res/tmpl/vehicle.html#posid=9079535008523925535&cur=0&width=960&height=75&type=&title=&url=http%3A%2F%2Fdc.pconline.com.cn%2Fjt%2F%23ad%3D0000 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<meta charset="UTF-8">
+<title>广点通广告位</title>
+<style type="text/css">
+
+</style>
+<script id="_gdt_loader_0.14012186601758003" data-name="1816222536" type="text/javascript" charset="utf-8" src="qbscomm.20140513.js"></script><script id="_gdt_loader_0.5772866611368954" data-name="1893158385" type="text/javascript" charset="utf-8" src="gdtlib.20140905.js"></script><script id="_gdt_loader_0.7818801202811301" data-name="477408226" type="text/javascript" charset="utf-8" src="ver.20140710.js"></script><script id="_gdt_loader_0.3739882225636393" data-name="924039808" type="text/javascript" charset="UTF-8" src="default.js"></script><script type="text/javascript" charset="UTF-8" src="stat_24f7451.js"></script><link rev="stylesheet" rel="stylesheet" type="text/css" media="screen" href="style.css"><script type="text/javascript" charset="UTF-8" src="poller_9e93484.js"></script><script type="text/javascript" charset="UTF-8" src="match_9bd4cf7.js"></script></head>
+<body marginwidth="0" marginheight="0">
+
+
+
+	<script type="text/javascript">
+document.domain = 'qq.com';
+(function(){
+	var sd='',
+		s='<script type="text\/javascript" src="http://qzonestyle.gtimg.cn',
+		e='"><\/script>',
+		l=[
+			sd +'/ac/lib/jquery/1.9.1/jquery.js',
+			sd +'/qzone/biz/comm/js/qbs.js'
+		];
+	document.write(s+l.join(e+s)+e);
+})();
+
+	</script><script type="text/javascript" src="jquery.js"></script><script type="text/javascript" src="qbs.js"></script>
+
+
+	<script type="text/javascript">
+
+var PageClickManage = {
+	none : -999,
+
+	entertime : 0,
+	bindFrameevent : function() {
+		var cm = GDT.ClickManage;
+		
+		J(document.body).hover(function(evt) {
+			cm.entertime = Util.getTime();
+		});
+
+	},
+	init : function() {
+		PageClickManage.bindFrameevent();	
+
+		//进入ifrmae 的时间, 清空库原来的值
+		GDT.ClickManage.mouseover = function() {
+		};
+		GDT.ClickManage.setPoscn('_js_pos_container');
+		GDT.ClickManage.getDisplayedTime = Manage.getDisplayedTime;
+	}
+
+};
+
+var Util =  {
+	getTime : function() {
+		return +new Date();
+	},
+	getParameter: function(name, cancelBubble) {
+		var r = new RegExp("(\\?|#|&)" + name + "=([^&#]*)(&|#|$)");
+		var m = location.href.match(r);
+		// if ((!m || m == "") && ! cancelBubble) m = top.location.href.match(r);
+		return (!m ? "": m[2]);
+	},
+	// Simple JavaScript Templating
+	// John Resig - http://ejohn.org/ - MIT Licensed
+	tmpl : (function(){
+		var cache = {};
+	  
+		function tmpl(str, data){
+			// Figure out if we're getting a template, or if we need to
+			// load the template - and be sure to cache the result.
+			var fn = !(/\W/).test(str) ?
+			  cache[str] = cache[str] ||
+				tmpl(document.getElementById(str).innerHTML) :
+			  
+			  // Generate a reusable function that will serve as a template
+			  // generator (and which will be cached).
+			  new Function("obj",
+				"var p=[],print=function(){p.push.apply(p,arguments);};" +
+				
+				// Introduce the data as local variables using with(){}
+				"with(obj){p.push('" +
+				
+				// Convert the template into pure JavaScript
+				str
+				  .replace(/[\r\t\n]/g, " ")
+				  .split("<%").join("\t")
+				  .replace(/((^|%>)[^\t]*)'/g, "$1\r")
+				  .replace(/\t=(.*?)%>/g, "',$1,'")
+				  .split("\t").join("');")
+				  .split("%>").join("p.push('")
+				  .split("\r").join("\\'")
+			  + "');}return p.join('');");
+			
+			// Provide some basic currying to the user
+			return data ? fn( data ) : fn;
+		}
+	  return tmpl;
+	})()
+};
+
+(function() {
+	window.J = jQuery.noConflict();
+	
+	var CssFileUrlCache={};
+
+	var plugin = {
+		//插入外链样式表
+		insertCSSLink: function(url, opts){
+			var sid, doc, t, cssLink, head;
+			if(CssFileUrlCache[url]){
+				return;
+			}
+			if(typeof opts == "string"){
+				sid = opts;
+			}
+			opts = (typeof opts == "object") ? opts : {};
+			sid = opts.linkID || sid;
+			doc = opts.doc || document;
+			head = doc.getElementsByTagName("head")[0];
+			cssLink = ((t = doc.getElementById(sid)) && (t.nodeName == "LINK")) ? t : null;
+
+			if (!cssLink) {
+				cssLink = doc.createElement("link");
+				sid && (cssLink.id = sid);
+				cssLink.rel = cssLink.rev = "stylesheet";
+				cssLink.type = "text/css";
+				cssLink.media = opts.media || "screen";
+				head.appendChild(cssLink);
+			}
+			try{
+				url && (cssLink.href = url);
+			}catch(ign){}
+			CssFileUrlCache[url] = true;
+			// return (plugin.ua.ie < 9 && cssLink.sheet) || cssLink; //IE>=9开始支持 .sheet了，和 .styleSheet 相同
+		}
+	};
+	J.extend(plugin);
+	J.extend(Util);
+})();
+
+
+var Helper = {
+
+	/**
+	 * 通过广告位配置每页有多少广告
+	 * @param  {object} poscfg 广告位配置
+	 * @return {integer}        每页广告个数
+	 */
+	getPerpageByPosCfg : function(poscfg) {
+		var cfg = poscfg && poscfg.playcfg || {}, hnum, wnum;
+		hnum = cfg.hnum || 1;
+		wnum = cfg.wnum || 1;
+		return hnum * wnum ;
+	},
+
+
+	/**
+	 * 设置图片轮播
+	 * @param  {object} pollopts 轮播可选参数
+	 * @example
+	 *          Helper.poller({
+	 *          	polltime  : polltime,
+	 *          	pollcount : o.pages,
+	 *          	container : 'container',
+	 *          	pollobjcn : '__js_crtcnt',
+	 *          	numcn 	  : '__js_numlist',
+	 *          	hightlightcn : 'on',
+	 *          	numtag	  : 'li',
+	 *          	onflip 	  : function(num, pollopts) {
+	 *          		Manage.updateFrameTime();
+	 *          		Helper.ping(num, pollopts);
+	 *          	},
+	 *          	data : {
+	 *          		posId : posId,
+	 *          		list  : data,
+	 *          		perpage : 2
+	 *          	}
+	 *          });
+	 * @return {void}          
+	 */
+	poller : function(pollopts) {
+		var pl, 
+			polltime = pollopts.polltime,
+			pollcount = pollopts.pollcount,
+			container = pollopts.container,
+			numcn = pollopts.numcn,
+			numtag = pollopts.numtag || '',
+			pollobjcn = pollopts.pollobjcn
+			;
+
+		pl = new GDT.Poller(polltime, pollcount);
+		pl.onflip = function(num) {
+			var setCurrentnum = pollopts.setCurrentnum || Helper.setCurrentnum;
+			setCurrentnum(num, pollopts);
+			pollopts.onflip && pollopts.onflip(num, pollopts);
+		};
+		pl.play();
+
+		container = J('#' + container);
+
+		// 轮播数字或者小图鼠标hover
+		container.find('.'+ numcn +' ' + numtag).hover(function(evt) {
+			var target , index;
+			target = J(this);
+			index = parseInt(target.attr('gdtoid'), 10);
+			if (!isNaN(index)) {
+				pl.setFrame(index);
+			}
+			pl.pause();
+		}, function(evt) {
+			pl.goon();
+		});
+
+		// 图片上要避免轮播。 避免用户想点击的时候轮播切换了。 
+		container.find('.' + pollobjcn).hover(function(evt) {
+			pl.pause();
+		}, function(evt) {
+			pl.goon();
+		});
+
+		// 轮播
+		if (pollcount > 1 ) {
+			container.find('.' + numcn).show();
+		} else {
+			// 只有一个不用轮播
+			pl.pause();
+		}
+
+	},
+
+	/**
+	 * 渲染轮播图
+	 * @param {integer} num   当前轮播数
+	 */	
+	setCurrentnum : function(num, pollopts) {
+		var hightlightcn = pollopts.hightlightcn || 'current', 
+			container = pollopts.container,
+			numcn = pollopts.numcn,
+			numtag = pollopts.numtag || '',
+			pollobjcn = pollopts.pollobjcn, 
+
+			container = pollopts.container;
+		container =  J('#' +container);
+
+		container.find('.'+ numcn +' ' + numtag).removeClass(hightlightcn).eq(num).addClass(hightlightcn);
+		container.find('.' + pollobjcn).hide().eq(num).show();
+		
+	}, 
+
+	pinged : {},
+	ping : function(num, pollopts) {
+		var str, cda = {}, nums, perpage, posId, data, poscfg;
+		
+		opts = pollopts || {};
+		
+		polldata = opts.data;
+		if (!polldata) {
+			return;
+		}
+
+		perpage = polldata.perpage || 1;
+		posId = polldata.posId;
+		data = polldata.list;
+
+		var tmp = data.slice(num * perpage , num*perpage  + perpage );
+		J.each(tmp, function(k, cda) {
+			if (!Helper.pinged[cda.cl]) {
+				GDT.view(posId, cda.cl);
+				Helper.pinged[cda.cl] = 1;
+			}
+		});		
+	},
+
+	/**
+	 * 展示广点通logo
+	 * @param {string} cnt  GDTlogo需要放到的容器
+	 * @return {void} 
+	 */
+	showLogo : function(cnt) {
+		var container = cnt ? J('#' + cnt) : J(document.body);
+		J('<a class="logo-arrow" title="广点通  腾讯效果推广" href="http://e.qq.com/" target="_blank"></a>').appendTo(container);
+	},
+
+	/**
+	 * 展示关闭按钮
+	 * @return {void} 
+	 */
+	showClose : function(cnt) {
+		var container = cnt ? J('#' + cnt) : J(document.body);
+
+		J('<a href="javascript:;" class="icon-close">关闭</a>').appendTo(container);
+	}
+
+}
+/**
+ * 广告管理object
+ * @type {Object}
+ * @namespace
+ */
+var Manage = {
+	
+	lastFrameTime : 0,
+	
+	/**
+	 * 获取展示时间
+	 * @return {integer} 广告展示时间
+	 */
+	getDisplayedTime : function() {
+		var now = Util.getTime();
+		return now - Manage.lastFrameTime;
+	},
+	
+	/**
+	 * 获取展示规格
+	 * @return {object} 展示规格
+	 */
+	getDisplayDimensions : function() {
+		return {
+			w : parseInt(Util.getParameter('width'), 10),
+			h : parseInt(Util.getParameter('height'), 10)
+		};
+	},
+
+	/**
+	 * 保留single , 目前主要是文案的部分
+	 * @param  {string} posId 广告位id
+	 * @param  {object} o     广告回包数据
+	 * @return {void}       
+	 */
+	renderImgTxt : function(posId, o) {
+		var tplTxt, tplImg, logotpl, rs='', data, w='100%', h='100%', cda = {}, ellist=[], htmlstr;
+
+
+		tplImg = '<div class="sns_img"> <a  {olink} class="img_link"><img src="{img}" alt="{txt}" width="{w}" height="{h}" /></a> </div>';
+		tplTxt = '<div class="sns_txt" style="width:{w}px"> <p><a  {olink}>{txt}</a></p> </div>';
+
+		data = o.data[0];
+
+		data.img && (rs += tplImg);
+		data.txt && (rs += tplTxt);
+
+		GDT.mix(cda, data);
+		GDT.mix(cda, o.cfg.playcfg);
+
+		J.insertCSSLink('./css/imgtxt.css');
+
+		htmlstr = [
+			'<div class="mod_sns _js_pos_container" id="container">',
+				'<div class="sns_inner">'+ GDT.format(rs, cda) +'</div>',
+			'</div>'
+		] .join('\r\n');
+
+		J(htmlstr).appendTo(J(document.body));
+
+		Helper.showLogo('container');
+		
+		Manage.updateFrameTime();
+
+		GDT.view(posId, data.cl);
+
+	},
+
+	config : {
+		polltime : 5000,
+		// polltime : 500000,
+		BORDERWIDTH: 2,
+		BORDERHEIGHT : 2,
+		defaultAdUrl : 'http://qzonestyle.gtimg.cn/qzone/biz/res/tmpl/js/default.js'
+	},
+
+	/**
+	 * 渲染轮播
+	 * @param  {string} posId 广告位id
+	 * @param  {object} o     广告请求返回数据
+	 * @return {null}       
+	 */
+	renderPoll : function(posId, o) {
+
+		var data, i, len, da, numarr = [], str, container,
+			oda = {}, pl, pdata = {}, poscfg, playcfg,
+			polltime = Manage.config.polltime,
+			tpl = [
+				'<div class="ads-blk-border"  style="width: <%=cfg.bpw%>px;height: <%=cfg.bph%>px;">',
+					'<div class="<%=containerclass%> _js_pos_container" id="container">',
+						'<span>',
+							// 总页数
+							 '<% var len = pages;   for (var i = 0; i < len; i++) { %>',
+							 	// 分页
+								'<span class="__js_crtcnt" gdtoid="<%=i%>" style="display: none;">',
+							 	'<% for(var j=0; j<perpage; j++ ) { var index = i*perpage+j; var da = data[index]; if(!da) {break;} %>',
+									 '<a <%=da.olink%>"><img src="<%=da.img%>" width="<%=cfg.w%>" height="<%=cfg.h%>" /></a>',
+									 // '<% if(da.txt) { %>',
+									 // 	'<div><a <%=da.olink%>><%=da.txt%></a></div>',
+									 // '<% } %>',
+								 '<% }  %>',
+								'</span>',
+							 '<% }  %>',
+						'</span>',
+						'<div class="<%=numclass%> __js_numlist" style="display: none;">',
+							 '<% var len = pages;  for (var i = 0; i < len; i++) { %>',
+								'<span gdtoid="<%=i%>" style="cursor: pointer;"></span>',
+							 '<% } %>',
+							
+						'</div>',
+					'</div>',
+				'</div>',
+			].join('\r\n');
+
+		Manage.insertCSS();
+
+		data = o.data;
+		len= data.length;
+		
+		poscfg =  o.cfg || {};
+		playcfg = poscfg.playcfg || {};
+
+		pdata.data = data;
+
+		// 分页
+		pdata.numclass = (playcfg.w > 200 && playcfg.h > 200) ? "foucs_num_b" :  "foucs_num_s";
+		pdata.numclass  = 'foucs_num_b';
+
+		playcfg.wnum = playcfg.wnum || 1;
+		playcfg.hnum = playcfg.hnum || 1;
+
+		pdata.perpage  = Helper.getPerpageByPosCfg(o.cfg);
+		pdata.pages    = Math.ceil( len/pdata.perpage ) ; 
+
+		// 单个 , 横排， 和竖排的
+		pdata.containerclass = (playcfg.hnum == playcfg.wnum ) ? 'ads-blk' : (  playcfg.hnum > playcfg.wnum? 'ads-blk-db02' : 'ads-blk-db01' );
+
+		// 广告位配置
+		pdata.cfg = playcfg;
+		pdata.cfg.bph = pdata.cfg.ph - Manage.config.BORDERHEIGHT;
+		pdata.cfg.bpw = pdata.cfg.pw - Manage.config.BORDERHEIGHT;
+	
+	// console.log(pdata);
+
+		J(J.tmpl(tpl, pdata)).appendTo( J(document.body) );
+
+		Helper.poller({
+			polltime  : Manage.config.polltime,
+			pollcount : pdata.pages,
+			container : 'container',
+			pollobjcn : '__js_crtcnt',
+			numcn 	  : '__js_numlist',
+			numtag	  : 'span',
+			onflip 	  : function(num, pollopts) {
+				Manage.updateFrameTime();
+				Helper.ping(num, pollopts);
+			},
+			data : {
+				posId : posId,
+				list  : data,
+				perpage : pdata.perpage,
+				poscfg : playcfg
+			}
+		});
+
+		Helper.showLogo('container');
+		
+
+	},
+	
+	/**
+	 * 渲染tips广告	
+	 * @param  {string} posId 广告位id
+	 * @param  {object} o   广告回调数据
+	 * @return {void}    
+	 */
+	renderTips : function(posId, o) {
+		var poscfg, data, len, pdata = {},
+			tpl = [
+			'<div class="ads-blk-tips _js_pos_container" id="container" style="">',
+				'<a <%=data.olink%>><img src="<%=data.img%>" alt="广告物料" width="<%=cfg.w%>" height="<%=cfg.h%>"></a>',
+			'</div>'
+		].join('\r\n');	
+
+		Manage.insertCSS();
+
+		data = o.data;
+		len= data.length;
+		
+		poscfg =  o.cfg.playcfg;
+
+		pdata.data = data[0];
+		pdata.cfg = poscfg;
+
+		J(J.tmpl(tpl, pdata)).appendTo( J(document.body) );
+
+		Manage.updateFrameTime();
+
+		GDT.view(posId, pdata.data.cl);
+
+		Helper.showLogo('container');
+		Helper.showClose();
+	},
+
+	insertCSS : function() {
+		J.insertCSSLink('./css/style.css');
+	},
+
+	/**
+	 * 设置图片测速
+	 * @return {void} 
+	 */
+	imgToSpeedTest: function() {
+		J('#container img').on( 'load', function(evt) {
+			var url = J(this).attr("src");
+			setTimeout(function() {
+				Manage.resourceTimeTest(url);
+			}, 0);
+		});
+	},
+
+	/**
+	 * 使用resource timing 进行图片测速
+	 * @param  {string} url 图片url
+	 * @return {void}     
+	 */
+	resourceTimeTest : function(url) {
+		if (window.performance && window.performance.getEntriesByName) {
+			var t =  window.performance.getEntriesByName(url) [0];
+			// console.log('=========================xxxxxxxxxxxx', t);
+			if (t) {
+				var fe = parseInt( t.fetchStart - t.startTime, 10) , req= parseInt(t.responseEnd - t.fetchStart, 10 ), r = Math.random() * 100;
+				
+				// req < 2 就是cache 了
+				if (r<10 && req>2) {
+					var url = 'http://isdspeed.qq.com/cgi-bin/r.cgi?flag1=175&flag2=33&flag3=23&1={1}&2={2}&r=' + Math.random();
+					url = url.replace('{1}', fe).replace('{2}', req);
+					GDT.pingreq(url);
+				}
+
+				var tarr = ["requestStart",  "connectStart",  "domainLookupStart" ], ret = 11, notcache = t.duration > 2, time;
+				for (var i = 0, len = tarr.length; i < len; i++) {
+					time = t[tarr[i]];
+					if ( time == 0) {
+						ret += Math.pow(2, i);
+					}
+				};
+				!notcache && (ret += 30);
+
+				GDT.valueStat('http://i.gdt.qq.com/view.fcg?resourcetiming', 1, ret, 1, 10, {urlext: '?resourcetiming'});
+			}
+		}
+	},
+
+
+
+	/**
+	 * 
+	 * @return {void}
+	 */
+	updateFrameTime : function() {
+		Manage.lastFrameTime = Util.getTime();
+	},
+	
+	pinged : {},
+
+	init : function() {
+		var pid = Util.getParameter('posid'), type = Util.getParameter('type');
+		
+		if (isNaN(pid)) {
+			return;
+		}
+
+		if (type != 'ecc') {
+
+			GDT.load({
+				posId : pid, 
+				context : {
+					common  : {
+						title: encodeURIComponent( decodeURIComponent( Util.getParameter('title') )) ,
+						url:  encodeURIComponent( decodeURIComponent( Util.getParameter('url') ) )  
+					}
+				},
+				// count : 8,
+				onComplete : function(o){
+					PageClickManage.init();
+					
+					var data =[] , poscfg, w, h, _render, dim = Manage.getDisplayDimensions();
+					if(o && o.ret ) {
+						data = o.data;
+						poscfg = o.cfg;
+					} else {
+						o.data = data;
+					}
+
+					_render = function(o) {
+						var showtype = o.cfg && o.cfg.showtype;
+						if(showtype === 'tips') {
+							Manage.renderTips(pid, o);
+						} else {
+							// 图文广告位按另外的渲染
+							if(o.data && o.data.length==1 && o.data[0].img && o.data[0].txt) {
+								Manage.renderImgTxt(pid, o);
+							} else {
+								Manage.renderPoll(pid, o);
+							}
+						}
+						Manage.imgToSpeedTest();			
+					};
+
+					// 获取不到广告位配置, 默认用一个图片填充
+					if (!poscfg) {
+						w = dim.w;
+						h = dim.h;
+						perpage = 1;
+						o.cfg = {
+							showtype : type,
+							playcfg : {
+								pw : w,
+								ph : h,
+								w : w,
+								h : h
+							}
+						};
+					} else {
+						w = poscfg.playcfg.w;
+						h = poscfg.playcfg.h;
+						perpage = Helper.getPerpageByPosCfg(poscfg);
+					}
+
+
+					// 保证一页是可以填满的
+					if ( data.length < perpage || data.length%perpage != 0) {
+						var remain = perpage - (data.length % perpage ) ;
+
+						GDT.importJs(Manage.config.defaultAdUrl, function() {
+							var remainlist = [], defaultAds;
+							defaultAds =  Manage.defaultAds[w + '_' + h];
+
+							if (defaultAds) {
+								remainlist = defaultAds.slice(0, remain);
+								o.data = o.data.concat(remainlist);
+							}
+
+							_render(o);
+						});
+					} else {
+						_render(o);
+					}
+
+				}
+			});
+
+			// 预加载默认广告
+			GDT.importJs(Manage.config.defaultAdUrl, function() {
+			});
+		} else {
+			var styleid = Util.getParameter('pollstyle'), stylemap = {
+				1: '/qzone/biz/res/tmpl/js/300_600.js'
+			}, script;
+			script = stylemap[styleid];
+
+			if (script) {
+				GDT.importJs(script, function() {
+					Manage.load(pid);
+				});
+			}
+		}
+
+	}
+};
+
+
+	
+		Manage.init();
+
+	</script>
+
+
+<div class="ads-blk-border" style="width: 958px;height: 73px;">  <div class="ads-blk _js_pos_container" id="container">  <span>    <span class="__js_crtcnt" gdtoid="0" style="display: none;">    <a onclick="return GDT._click( &#39;9079535008523925535&#39;, &#39;4037781&#39;, {el: this} );" onmousedown="GDT. ClickManage.mousedown( &#39;9079535008523925535&#39;, &#39;4037781&#39;, {el: this} );" onmouseup="GDT. ClickManage.mouseup( &#39;9079535008523925535&#39;, &#39;4037781&#39;, {el: this} );" onmouseover="GDT. ClickManage.mouseover( &#39;9079535008523925535&#39;, &#39;4037781&#39;, {el: this} );" href="http://c.gdt.qq.com/gdt_click.fcg?viewid=32BcaUCutYJKelV0G_Nw22NSGt7ePT!ek3CCErIQkjPLvoO0AT9!Vp4mL4LkDyuWXeQMIUtbTmsesDvAtRSScgWhlEYyOb46x6R6AbaFs_xyb9NCffShWCTUBe7c8P2gcrCHdNR7GeOvb67bc2ZTlFNBVhREOhsNO_GI!utXtHyeOkp1AI6_h8dOHyxsK2Jjx7X0rJoeDfDZBeU5xBcc2hkeRLh!ff3m6pmJk0gurwhsHGBnG!GF4Tz6472X6uLJ&jtype=0&i=1" gdtoriurl="http://c.gdt.qq.com/gdt_click.fcg?viewid=32BcaUCutYJKelV0G_Nw22NSGt7ePT!ek3CCErIQkjPLvoO0AT9!Vp4mL4LkDyuWXeQMIUtbTmsesDvAtRSScgWhlEYyOb46x6R6AbaFs_xyb9NCffShWCTUBe7c8P2gcrCHdNR7GeOvb67bc2ZTlFNBVhREOhsNO_GI!utXtHyeOkp1AI6_h8dOHyxsK2Jjx7X0rJoeDfDZBeU5xBcc2hkeRLh!ff3m6pmJk0gurwhsHGBnG!GF4Tz6472X6uLJ&amp;jtype=0&amp;i=1" target="_blank" "=""><img src="0" width="960" height="75"></a>    </span>    <span class="__js_crtcnt" gdtoid="1" style="display: inline;">    <a onclick="return GDT._click( &#39;9079535008523925535&#39;, &#39;3676230&#39;, {el: this} );" onmousedown="GDT. ClickManage.mousedown( &#39;9079535008523925535&#39;, &#39;3676230&#39;, {el: this} );" onmouseup="GDT. ClickManage.mouseup( &#39;9079535008523925535&#39;, &#39;3676230&#39;, {el: this} );" onmouseover="GDT. ClickManage.mouseover( &#39;9079535008523925535&#39;, &#39;3676230&#39;, {el: this} );" href="http://c.gdt.qq.com/gdt_click.fcg?viewid=uFTHgiO8mBRKelV0G_Nw237E16MsEuDKqJR40KA1QFYGwx7m08GUMu!4wL!6143vEcBHYmhgJz4dsbkXOVDNqwPy8B6EbMdVyydorhQ68_wNyNQaWMRYrW9Umnk3hh_UAdfSymVh9TgNDvAE4XX!XL18JGq_mJMd3DRXYMD5SElEPMI5w!h4M3pueP4Magyqha0M3chzb7dYsB1osMXve8i4gyc9RNEz5nnqrCo!GiFxrEujB1DlUw&jtype=0&i=1" gdtoriurl="http://c.gdt.qq.com/gdt_click.fcg?viewid=uFTHgiO8mBRKelV0G_Nw237E16MsEuDKqJR40KA1QFYGwx7m08GUMu!4wL!6143vEcBHYmhgJz4dsbkXOVDNqwPy8B6EbMdVyydorhQ68_wNyNQaWMRYrW9Umnk3hh_UAdfSymVh9TgNDvAE4XX!XL18JGq_mJMd3DRXYMD5SElEPMI5w!h4M3pueP4Magyqha0M3chzb7dYsB1osMXve8i4gyc9RNEz5nnqrCo!GiFxrEujB1DlUw&amp;jtype=0&amp;i=1" target="_blank" "=""><img src="0(1)" width="960" height="75"></a>    </span>    <span class="__js_crtcnt" gdtoid="2" style="display: none;">    <a onclick="return GDT._click( &#39;9079535008523925535&#39;, &#39;2135894&#39;, {el: this} );" onmousedown="GDT. ClickManage.mousedown( &#39;9079535008523925535&#39;, &#39;2135894&#39;, {el: this} );" onmouseup="GDT. ClickManage.mouseup( &#39;9079535008523925535&#39;, &#39;2135894&#39;, {el: this} );" onmouseover="GDT. ClickManage.mouseover( &#39;9079535008523925535&#39;, &#39;2135894&#39;, {el: this} );" href="http://c.gdt.qq.com/gdt_click.fcg?viewid=5buWacspZu1KelV0G_Nw23WMcgH8yzsv1BBf721Xko1X873JiCuSokx9i6B2_z44tDWAx0b0vPMvgsFxxQwq9PGocJy57msL5lU_AxJvG4AjaAImrM3AVOaoAL5j62XjDcjUGljEWK1vVJp5N4Yf1AHX0splYfU4QIx79j8C0oi9fCRqv5iTHdw0V2DA!UhJtcsa49JGk4haKoB3gKYN8IWtDN3Ic2!3WLAdaLDF73vRu1yckBb!PeZ56qwqPhohcaxLowdQ5VM&jtype=0&via=7E00FCFC1CCAB81F&i=1" gdtoriurl="http://c.gdt.qq.com/gdt_click.fcg?viewid=5buWacspZu1KelV0G_Nw23WMcgH8yzsv1BBf721Xko1X873JiCuSokx9i6B2_z44tDWAx0b0vPMvgsFxxQwq9PGocJy57msL5lU_AxJvG4AjaAImrM3AVOaoAL5j62XjDcjUGljEWK1vVJp5N4Yf1AHX0splYfU4QIx79j8C0oi9fCRqv5iTHdw0V2DA!UhJtcsa49JGk4haKoB3gKYN8IWtDN3Ic2!3WLAdaLDF73vRu1yckBb!PeZ56qwqPhohcaxLowdQ5VM&amp;jtype=0&amp;via=7E00FCFC1CCAB81F&amp;i=1" target="_blank" "=""><img src="0(2)" width="960" height="75"></a>    </span>    <span class="__js_crtcnt" gdtoid="3" style="display: none;">    <a onclick="return GDT._click( &#39;9079535008523925535&#39;, &#39;3172633&#39;, {el: this} );" onmousedown="GDT. ClickManage.mousedown( &#39;9079535008523925535&#39;, &#39;3172633&#39;, {el: this} );" onmouseup="GDT. ClickManage.mouseup( &#39;9079535008523925535&#39;, &#39;3172633&#39;, {el: this} );" onmouseover="GDT. ClickManage.mouseover( &#39;9079535008523925535&#39;, &#39;3172633&#39;, {el: this} );" href="http://c.gdt.qq.com/gdt_click.fcg?viewid=32BcaUCutYJKelV0G_Nw24dZ66qJZ!HIqsRvxAM5UW1aVMDyPlDlLJ4mL4LkDyuWXeQMIUtbTmsesDvAtRSSckAjCxaTQE8Zx6R6AbaFs_xyb9NCffShWCTUBe7c8P2gcrCHdNR7GeOvb67bc2ZTlFNBVhREOhsNO_GI!utXtHxDcz7QC9UNaV7Ya_z1Q4zMx7X0rJoeDfDZBeU5xBcc2uW3dx17eGyY6pmJk0gurwhsHGBnG!GF4Tz6472X6uLJ&jtype=0&i=1" gdtoriurl="http://c.gdt.qq.com/gdt_click.fcg?viewid=32BcaUCutYJKelV0G_Nw24dZ66qJZ!HIqsRvxAM5UW1aVMDyPlDlLJ4mL4LkDyuWXeQMIUtbTmsesDvAtRSSckAjCxaTQE8Zx6R6AbaFs_xyb9NCffShWCTUBe7c8P2gcrCHdNR7GeOvb67bc2ZTlFNBVhREOhsNO_GI!utXtHxDcz7QC9UNaV7Ya_z1Q4zMx7X0rJoeDfDZBeU5xBcc2uW3dx17eGyY6pmJk0gurwhsHGBnG!GF4Tz6472X6uLJ&amp;jtype=0&amp;i=1" target="_blank" "=""><img src="0(3)" width="960" height="75"></a>    </span>    <span class="__js_crtcnt" gdtoid="4" style="display: none;">    <a onclick="return GDT._click( &#39;9079535008523925535&#39;, &#39;2883862&#39;, {el: this} );" onmousedown="GDT. ClickManage.mousedown( &#39;9079535008523925535&#39;, &#39;2883862&#39;, {el: this} );" onmouseup="GDT. ClickManage.mouseup( &#39;9079535008523925535&#39;, &#39;2883862&#39;, {el: this} );" onmouseover="GDT. ClickManage.mouseover( &#39;9079535008523925535&#39;, &#39;2883862&#39;, {el: this} );" href="http://c.gdt.qq.com/gdt_click.fcg?viewid=32BcaUCutYJKelV0G_Nw2xuDxZLiD9Rllar8Crza8p5nZ5zmyvk8oJ4mL4LkDyuWXeQMIUtbTmsesDvAtRSSckAjCxaTQE8Zx6R6AbaFs_xyb9NCffShWCTUBe7c8P2gWSvbmmY07X!vb67bc2ZTlFNBVhREOhsNO_GI!utXtHxDcz7QC9UNactgrxpQd3Xqx7X0rJoeDfDZBeU5xBcc2gEvzfj_KvGP6pmJk0gurwhsHGBnG!GF4Tz6472X6uLJ&jtype=0&i=1" gdtoriurl="http://c.gdt.qq.com/gdt_click.fcg?viewid=32BcaUCutYJKelV0G_Nw2xuDxZLiD9Rllar8Crza8p5nZ5zmyvk8oJ4mL4LkDyuWXeQMIUtbTmsesDvAtRSSckAjCxaTQE8Zx6R6AbaFs_xyb9NCffShWCTUBe7c8P2gWSvbmmY07X!vb67bc2ZTlFNBVhREOhsNO_GI!utXtHxDcz7QC9UNactgrxpQd3Xqx7X0rJoeDfDZBeU5xBcc2gEvzfj_KvGP6pmJk0gurwhsHGBnG!GF4Tz6472X6uLJ&amp;jtype=0&amp;i=1" target="_blank" "=""><img src="0(4)" width="960" height="75"></a>    </span>    <span class="__js_crtcnt" gdtoid="5" style="display: none;">    <a onclick="return GDT._click( &#39;9079535008523925535&#39;, &#39;2811180&#39;, {el: this} );" onmousedown="GDT. ClickManage.mousedown( &#39;9079535008523925535&#39;, &#39;2811180&#39;, {el: this} );" onmouseup="GDT. ClickManage.mouseup( &#39;9079535008523925535&#39;, &#39;2811180&#39;, {el: this} );" onmouseover="GDT. ClickManage.mouseover( &#39;9079535008523925535&#39;, &#39;2811180&#39;, {el: this} );" href="http://c.gdt.qq.com/gdt_click.fcg?viewid=5c2hgLKPFElKelV0G_Nw2190YzTgNdxugtK!52CWq2qYxXVkBdoLJXgZSICjhumq5ZRxy3PdD0EFqky49Wipc8VFAHm_11qcrjsUwfvkOpISyaLBphOBXdcTSwam_YgoRdxlCmpmJo3L64cTKI8CoeCJ5I2AkLo9LoaqyYMgz84Ht4RnI6DO2xfAhFWhyTwa5tE4WO!itNVWvCJAKTxyh9a_zg1ERNFlh2NXP0SqB4XIhL!IbXbLyw&jtype=0&i=1" gdtoriurl="http://c.gdt.qq.com/gdt_click.fcg?viewid=5c2hgLKPFElKelV0G_Nw2190YzTgNdxugtK!52CWq2qYxXVkBdoLJXgZSICjhumq5ZRxy3PdD0EFqky49Wipc8VFAHm_11qcrjsUwfvkOpISyaLBphOBXdcTSwam_YgoRdxlCmpmJo3L64cTKI8CoeCJ5I2AkLo9LoaqyYMgz84Ht4RnI6DO2xfAhFWhyTwa5tE4WO!itNVWvCJAKTxyh9a_zg1ERNFlh2NXP0SqB4XIhL!IbXbLyw&amp;jtype=0&amp;i=1" target="_blank" "=""><img src="0(5)" width="960" height="75"></a>    </span>    <span class="__js_crtcnt" gdtoid="6" style="display: none;">    <a onclick="return GDT._click( &#39;9079535008523925535&#39;, &#39;3686361&#39;, {el: this} );" onmousedown="GDT. ClickManage.mousedown( &#39;9079535008523925535&#39;, &#39;3686361&#39;, {el: this} );" onmouseup="GDT. ClickManage.mouseup( &#39;9079535008523925535&#39;, &#39;3686361&#39;, {el: this} );" onmouseover="GDT. ClickManage.mouseover( &#39;9079535008523925535&#39;, &#39;3686361&#39;, {el: this} );" href="http://c.gdt.qq.com/gdt_click.fcg?viewid=32BcaUCutYJKelV0G_Nw2xN4LnhjCQxlwaWVStBNScrh79!eBAbP2Z4mL4LkDyuWXeQMIUtbTmsesDvAtRSSckYLxMFrvJ6!x6R6AbaFs_xyb9NCffShWCTUBe7c8P2gcrCHdNR7GeOvb67bc2ZTlFNBVhREOhsNO_GI!utXtHxXQn8SjimRKkQM!3RELrpKx7X0rJoeDfDZBeU5xBcc2swWEItdq!Fl6pmJk0gurwhsHGBnG!GF4Tz6472X6uLJ&jtype=0&i=1" gdtoriurl="http://c.gdt.qq.com/gdt_click.fcg?viewid=32BcaUCutYJKelV0G_Nw2xN4LnhjCQxlwaWVStBNScrh79!eBAbP2Z4mL4LkDyuWXeQMIUtbTmsesDvAtRSSckYLxMFrvJ6!x6R6AbaFs_xyb9NCffShWCTUBe7c8P2gcrCHdNR7GeOvb67bc2ZTlFNBVhREOhsNO_GI!utXtHxXQn8SjimRKkQM!3RELrpKx7X0rJoeDfDZBeU5xBcc2swWEItdq!Fl6pmJk0gurwhsHGBnG!GF4Tz6472X6uLJ&amp;jtype=0&amp;i=1" target="_blank" "=""><img src="0(6)" width="960" height="75"></a>    </span>    <span class="__js_crtcnt" gdtoid="7" style="display: none;">    <a onclick="return GDT._click( &#39;9079535008523925535&#39;, &#39;3654902&#39;, {el: this} );" onmousedown="GDT. ClickManage.mousedown( &#39;9079535008523925535&#39;, &#39;3654902&#39;, {el: this} );" onmouseup="GDT. ClickManage.mouseup( &#39;9079535008523925535&#39;, &#39;3654902&#39;, {el: this} );" onmouseover="GDT. ClickManage.mouseover( &#39;9079535008523925535&#39;, &#39;3654902&#39;, {el: this} );" href="http://c.gdt.qq.com/gdt_click.fcg?viewid=32BcaUCutYJKelV0G_Nw265ZOdJFRO2AmcnL0CvVDiPmWD2o5H6xhp4mL4LkDyuWXeQMIUtbTmsesDvAtRSSckYLxMFrvJ6!x6R6AbaFs_xyb9NCffShWCTUBe7c8P2gWSvbmmY07X91YE!9R_XttFNBVhREOhsNO_GI!utXtHzkU5rQeaDeHfIQQdzFNQfix7X0rJoeDfDZBeU5xBcc2tecr6N3Mpo96pmJk0gurwhsHGBnG!GF4Tz6472X6uLJ&jtype=0&i=1" gdtoriurl="http://c.gdt.qq.com/gdt_click.fcg?viewid=32BcaUCutYJKelV0G_Nw265ZOdJFRO2AmcnL0CvVDiPmWD2o5H6xhp4mL4LkDyuWXeQMIUtbTmsesDvAtRSSckYLxMFrvJ6!x6R6AbaFs_xyb9NCffShWCTUBe7c8P2gWSvbmmY07X91YE!9R_XttFNBVhREOhsNO_GI!utXtHzkU5rQeaDeHfIQQdzFNQfix7X0rJoeDfDZBeU5xBcc2tecr6N3Mpo96pmJk0gurwhsHGBnG!GF4Tz6472X6uLJ&amp;jtype=0&amp;i=1" target="_blank" "=""><img src="0(7)" width="960" height="75"></a>    </span>    </span>  <div class="foucs_num_b __js_numlist" style="">    <span gdtoid="0" style="cursor: pointer;" class=""></span>    <span gdtoid="1" style="cursor: pointer;" class="current"></span>    <span gdtoid="2" style="cursor: pointer;" class=""></span>    <span gdtoid="3" style="cursor: pointer;" class=""></span>    <span gdtoid="4" style="cursor: pointer;" class=""></span>    <span gdtoid="5" style="cursor: pointer;" class=""></span>    <span gdtoid="6" style="cursor: pointer;" class=""></span>    <span gdtoid="7" style="cursor: pointer;" class=""></span>    </div>  <a class="logo-arrow" title="广点通  腾讯效果推广" href="http://e.qq.com/" target="_blank"></a></div>  </div></body></html>

@@ -1,0 +1,97 @@
+
+*{
+    margin:0px auto;
+    padding:0px;
+}
+
+body {
+	font-family:'Verdana','SimSun';
+	font-size:12px;
+	color:#333;
+}
+
+nav ul {
+    list-style:none;
+}
+
+
+a{
+    margin:0;
+    padding:0;
+    font-size:100%;
+    background:transparent;
+	text-decoration:none;
+	color:#333;
+}
+a:hover{ color:#fa6709; text-decoration:none;}
+ul,ol{
+	list-style:none;
+}
+img{
+	border:none;
+}
+h1, h2, h3, h4, h5, h6 {
+font-size: 100%;
+font-weight:normal;
+}
+
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+textarea{resize: none;}
+
+input, select {
+    vertical-align:middle;
+}
+b{ font-weight:normal;}
+.clearfix,a.clearfix{ zoom:1;}
+* html .clearfix {display: inline-block;}
+*+html .clearfix {display: inline-block;}
+.clearfix:after,a.clearfix:after{clear:both;display:block;content:"";height:0px;overflow:hidden;}
+
+.f_family{font-family:"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei","微软雅黑",tahoma,arial,simhei,"黑体"; }
+.c_orange{ color:#ff6d00;}
+.c_green{ color:#27ae60;}
+.c_9{ color:#999;}
+.c_3{ color:#333;}
+.c_gray{ color:#999;}
+.c_blue{ color:#2980b9;}
+.c_w{ font-weight:bold;}
+.f_16{ font-size:16px;}
+.f_20{ font-size:20px;}
+.f_12{ font-size:12px;}
+.f_14{ font-size:14px;}
+
+.btn_orange02{ background:#ff5500; padding:5px 12px 6px 12px; color:#fff;}
+.btn_orange02:hover{ color:#fff;}
+.btn_green02{ background:#27ae60; padding:5px 12px 6px 12px; color:#fff;}
+.btn_green02:hover{ color:#fff;}
+
+.btn_orange{ border:1px solid #ff6d00; padding:4px 8px 6px 8px;}
+.btn_green{border:1px solid #27ae60;  padding:4px 8px 6px 8px;}
+.btn_gray{border:1px solid #7f8c8d;  padding:4px 8px 6px 8px}
+.btn_gray02{border:1px solid #ccc;  padding:4px 8px 6px 8px}
+
+
+
+
+
+
+/*--pages--*/
+
+
+.pages{width:100%;overflow:hidden;}
+.pages ul{float:right;font-size:12px;}
+.pages ul li{float:left;font-size:12px;}
+
+.pages ul li a{margin-right:10px;background:url(../images/btn_page.png) no-repeat left 0; float:left;}
+.pages ul li a span{background:url(../images/btn_page.png) no-repeat right 0; padding:4px 6px 4px 0px; float:left; height:18px; line-height:18px; display:inline-block; margin-left:6px;}
+.pages ul li a:hover,.pages ul li a.select{background:url(../images/btn_page.png) left -26px;}
+.pages ul li a:hover span,.pages ul li a.select span{background:url(../images/btn_page.png) right -26px; color:#fff;}
+
+.pages_right{ width:auto; float:right;}
+.pages_right select{ float:right; margin-right:10px;}
+

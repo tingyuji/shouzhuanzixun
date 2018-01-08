@@ -1,0 +1,90 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript" src="/tel/Public/js/jquery-1.7.2.min.js"></script>
+<script type='text/javascript' src='/tel/Public/js/easyui/jquery.easyui.min.js'></script>
+<script type='text/javascript' src='/tel/Public/js/easyui/locale/easyui-lang-zh_CN.js'></script>
+<link rel='stylesheet' href='/tel/Public/js/easyui/themes/default/easyui.css' type='text/css'>
+<link rel='stylesheet' href='/tel/Public/js/easyui/themes/icon.css' type='text/css'>
+
+<script type="text/javascript" src="/tel/Public/js/zDialog/zDrag.js"></script>
+<script type="text/javascript" src="/tel/Public/js/zDialog/zDialog.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#b').click(function(){
+        $.ajax({
+        url: '__URL__/updateData2',
+        type: 'post',
+        data: {
+            id: $('#id').val(),
+            duifangwangzhi: $('#duifangwangzhi').val(),
+            duifangkey: $('#duifangkey').val(),
+            qq: $('#qq').val(),
+            dianhua: $('#dianhua').val(),
+            lianxiren: $('#lianxiren').val(),
+            zijiwangzhi: $('#zijiwangzhi').val(),
+            zijikey: $('#zijikey').val(),
+            jiaohuanshijian: $('#jiaohuanshijian').val(),
+            beizhu: $('#beizhu').val()          
+        },
+        async:false,
+        dataType: "text",
+        success: function(data){
+              alert('修改成功');
+              Dialog.close();    
+              
+           } 
+        });
+  });
+});
+</script>
+</head>
+
+<body style="width:350px;height:300px;margin:0 auto;padding:0;">
+   <div style="margin:0 auto;">
+        <div class="content">
+            <table>
+                <tbody>
+                    <tr>
+                        <th><span class="del-order">对方网址</span></th>
+                        <td><input name="type" id="duifangwangzhi" type="text" value="{$data.duifangwangzhi}"/></td>                       
+                    </tr>
+                    <tr>
+                        <th><span class="del-order">对方关键词</span></th>
+                        <td><input name="type" id="duifangkey" type="text" value="{$data.duifangkey}"/></td>                       
+                    </tr>                    
+                    <tr>
+                        <th><span class="del-order">QQ</span></th>
+                        <td><input name="type" id="qq" type="text" value="{$data.qq}"/></td>  
+                    </tr> 
+                    <tr>
+                        <th><span class="del-order">电话</span></th>
+                        <td><input name="type" id="dianhua" type="text" value="{$data.dianhua}"/></td>  
+                    </tr> 
+                    <tr>
+                        <th><span class="del-order">联系人</span></th>
+                        <td><input name="type" id="lianxiren" type="text" value="{$data.lianxiren}"/></td>  
+                    </tr>                     
+                    <tr>
+                        <th><span class="del-order">自己网址</span></th>
+                        <td><input name="type" id="zijiwangzhi" type="text" value="{$data.zijiwangzhi}"/></td>  
+                    </tr>                     
+                    <tr>
+                        <th><span class="del-order">自己关键词</span></th>
+                        <td><input name="type" id="zijikey" type="text" value="{$data.zijikey}"/></td>  
+                    </tr>                                                             
+                    <tr>
+                        <th><span class="del-order">交换时间</span></th>
+                        <td><input name="type" id="jiaohuanshijian" type="text" value="{$data.jiaohuanshijian}"/></td>  
+                    </tr>                                                             
+                    <tr>
+                        <th><span class="del-order">备注</span></th>
+                        <td><input name="type" id="beizhu" type="text" value="{$data.beizhu}"/></td>  
+                    </tr>                                                                                                     
+                </tbody>
+            </table>
+        </div>
+        <div style="padding-left:150px;"><a id="b"  href="#" class="easyui-linkbutton" >确定</a></div>
+      </div>
+<input type="hidden" id="id" value="{$data.id}"/>      
+</body>
+</html>

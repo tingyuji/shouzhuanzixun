@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <title>新丰生活网电话本</title>
+    <meta name="description" content="新丰生活网电话本">
+    <link rel="stylesheet" type="text/css" href="Public/home/css/common.v2.css">
+    <link rel="stylesheet" type="text/css" href="Public/home/css/tel.v2.css">
+    <script type="text/javascript" src="Public/home/js/jquery.js"></script>
+    <script type="text/javascript" src="Public/js/Cookies/src/cookies.min.js"></script>
+    <script type="text/javascript" src="Public/home/js/common.v2.js"></script>
+   
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+      
+    });
+    </script>
+ 
+</head>
+<body>
+    
+<header>
+    <dl class="hdcontent">
+        <dd class="toback"><a onClick="window.history.back()"></a></dd>
+        
+        <!--
+        <dd class="hduser">        
+            <a href="http://m.tlzx.cc/login/?reurl=/tel/teldetail.aspx?id=835290"><i class="off"></i></a>
+        </dd>
+    -->
+        <!--
+        <dd class="hdnav"><a onclick="shownav()"></a></dd>
+    -->
+        
+        <dt>新丰生活网电话本</dt>
+    </dl>
+    <div id="hdnav-cont">
+        <span></span>
+        <ul id="TopCss1_top">
+            <li><a class="ind" href="http://m.tlzx.cc/"><i></i></a>首页</li>
+            <li><a class="news" href="http://m.tlzx.cc/news/"><i></i></a>热点资讯</li>
+            <li><a class="bbs" href="http://m.tlzx.cc/bbs/"><i></i></a>逛论坛</li>
+            <li><a class="post" href="http://m.tlzx.cc/post/"><i></i></a>分类信息</li>
+            <li><a class="tel" href="http://m.tlzx.cc/tel/"><i></i></a>电话簿</li>
+            <li><a class="stor" href="http://m.tlzx.cc/store/"><i></i></a>找商家</li>
+            <li><a class="tuan" href="http://m.tlzx.cc/tuan/"><i></i></a>本地团购</li>
+            <li><a class="job" href="http://m.tlzx.cc/post/zhaopin/"><i></i></a>找工作</li>
+            <li><a class="house" href="http://m.tlzx.cc/post/fangwu/"><i></i></a>找房子</li>
+            <li><a class="xlp" href="http://m.tlzx.cc/post/xinloupan/"><i></i></a>新楼盘</li>
+        </ul>
+    </div>
+</header>
+    <div class="dethead">
+        <h1 class="lxname">
+            
+			<span>{$data.seller}</span></h1>
+        <p>标签：</p>
+    </div>
+    <ul class="detbuts">
+        <li onClick="jiucFun()">纠错</li>
+        
+        <!--
+        <li id="collect">收藏</li>
+        <li class="sharesj" onclick="javascript:showAlertBox(&#39;http://www.tlzx.cc/phonebook/835290x.html&#39;)">分享</li>
+    -->
+    <!--
+    <!-- JiaThis Button BEGIN 
+    <div class="jiathis_style_32x32" style="float:right;padding-top:5px;">
+        <a class="jiathis_button_qzone"></a>
+        <a class="jiathis_button_tsina"></a>
+        <a class="jiathis_button_tqq"></a>
+        <a class="jiathis_button_weixin"></a>
+        <a class="jiathis_counter_style"></a>
+    </div>
+    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1408281183100150" charset="utf-8"></script>
+    <!-- JiaThis Button END 
+    -->
+    </ul>
+    <ul class="bor_radius tel_num">
+        <!--
+        <li><a href="tel:8233804">8233804 </a><a href="tel:8233804" class="a_phone"></a></li>
+    -->
+    <li><a href="tel:{$data.telephone}">电话:{$data.telephone} </a></li>
+    <li><a href="tel:{$data.contacter}">联系人:{$data.contacter} </a></li>
+    <li><a href="#66B2E7">地址:<span>{$data.address}</span></a></li>
+    <!--
+    <li><a href="#66B2E7">微信:<span style="overflow: hidden;">{$data.weixin}</span></a></li>
+-->
+    </ul>
+    <div class="explatxt">
+        点击蓝色图标可直接呼叫号码<br>
+        亲，联系时可以说新丰生活网看到的哦<br>
+    </div>
+    <div class="explatxt" style="color:#F85403">{$data.desc}</div>
+    <!--
+    <ul class="indebox"><li><a href="__URL__/index">进入普通黄页</a></li></ul>
+    <a href="__URL__/index" class="bor_radius moretel">返回查找更多号码&gt;&gt;</a>
+    -->
+
+    
+             
+
+
+<footer>
+    <!--
+    <nav id="FirstBotCss1_BotNavigation">
+        <a href="http://m.tlzx.cc/" id="nomb">首页</a>
+        <a href="http://m.tlzx.cc/news/">热点</a>
+        <a href="http://m.tlzx.cc/bbs/">论坛</a>
+        <a href="http://m.tlzx.cc/post/">分类</a>
+        <a href="http://m.tlzx.cc/tel/">电话</a>
+        <a href="http://m.tlzx.cc/webmap.html">更多</a>
+    </nav>
+    <div class="fot_kid"><span>触屏版</span>
+        /<a href="http://www.tlzx.cc/yp/?pc" id="FirstBotCss1_pc">电脑版</a>
+        /<a href="http://m.tlzx.cc/contactus.aspx">留言</a>
+    </div>
+    -->
+    <div class="fotibc" style="margin:5px;padding-bottom:5px;">
+        <span>(c)2014 本站版权由新丰生活网所有<br>粤ICP备14080186号-1
+        </span>
+    </div>
+</footer>
+    <script type="text/javascript">
+    var sc = 1;
+    $("#collect").click(function () {
+        if ($(this).hasClass("cancelsc")) {
+            $(this).text("收藏").removeClass("cancelsc")
+            sc = 2;
+        } else {
+            $(this).text("取消收藏").addClass("cancelsc")
+            sc = 1;
+        }
+        jQuery.ajax({
+            url: "/Handler/Users/UserRecord.ashx",
+            type: "POST",
+            data: { theirID: 835290,oType:sc },
+            success: function (data) { 
+                if(data=="1000")
+                {
+                    if(sc==1)
+                    {
+                    errorFun("收藏成功!")
+                    }
+                    else
+                    {
+                    errorFun("取消收藏成功!")
+                    }
+                }
+                else if(data=="1002")
+                {
+                    errorFun("非本站用户,禁止操作！");
+                    $(this).text("收藏").removeClass("cancelsc");
+                }
+                 else if(data=="1003")
+                {
+                    window.location.href = "/login/?reurl=" + window.location.href;
+                }
+                else
+                {
+                    errorFun("操作失败！")
+                }
+            }
+        });
+    }) //点击收藏
+    function jiucFun(){
+        var userName = Cookies.get('username2');
+        if(typeof userName == "undefined"){
+          userName='未知';
+        }
+        if(userName == ""){
+          userName='未知';
+        }            
+        showTebox("纠错",'<ul id="jiucuobox"><li><label><input type="checkbox" name="jccheck"><span>手机号拨不通</span></label></li><li><label><input name="jccheck" type="checkbox"><span>座机号拨不通</span></label></li><li><input type="text" id="jctext" placeholder="你知道就告诉我呗"></li><li><input type="button" value="提交" id="jcbutm"></li></ul>')
+        $("#jcbutm").click(function(){
+            if($("input[name='jccheck']:checked").length==0&&$("#jctext").val()==""){
+            errorFun("请选择错误原因！")
+        }else{
+            var jcstr="";
+            $("input[name='jccheck']:checked").each(function() {
+                jcstr+=$(this).next().html()+"；"
+            });
+        if($("#jctext").val()!=""){
+            jcstr+=$("#jctext").val()
+        }
+        errorFun("正在提交...")
+        $("#jiucuobox input").attr("disabled",true);
+        $.ajax({
+            type: "post",
+            url: "__URL__/correction",
+            data: {
+                foreignid:$('#id').val(),
+                seller:$('#seller').val(),
+                telephone:$('#telephone').val(),
+                correction:jcstr,
+                userName:userName
+            },
+            error: function() {
+                errorFun("服务系统请求失败，请稍后再试！")
+                $("#jiucuobox input").attr("disabled",false);
+            },
+            success: function(data) {
+            if(data>0)
+            {
+                errorFun("信息已提交，感谢支持！")
+            }
+            else
+            {
+                errorFun("信息提交失败，请稍后再试！")    
+            }
+            $("#showTebox").remove()
+            }
+        })
+        }
+        })
+    }
+    </script>
+
+
+<div id="toTop"><i></i></div>
+<input type="hidden" id="id" value="{$data.id}"/>
+<input type="hidden" id="seller" value="{$data.seller}"/>
+<input type="hidden" id="telephone" value="{$data.telephone}"/>
+<script type="text/javascript">
+        jQuery(document).ready(function ($) {
+
+
+        });
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254416569'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/stat.php%3Fid%3D1254416569%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+<input type="hidden" id="id" value="{$data.id}"/>
+</body>
+</html>
