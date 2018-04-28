@@ -36,6 +36,7 @@
       background-color: #ff6965;
       height: 45px;
       line-height: 45px;
+      clear:both;
     }
     .nav-wrap .nav ul{
       list-style: none;
@@ -83,10 +84,10 @@
   <div class="header">
     <div class="topNav">
       <div class="left">
-      手赚资讯网
+      <img style="height:45px;line-height: 45px;margin-top: 15px;" src="logo/1515402078_544189.png" />
       </div>
       <div class="right">
-        <a href="index9.php">登录</a>
+        <a href="#">登录</a>
         |
         <a href="#">论坛</a>
       </div>
@@ -123,8 +124,15 @@
     </div>
   </div>
   <div id="foo">
-  <p>咨询事宜请联系客服专员，欢迎各位提出宝贵意见</p>
-  <img class="img" src="images/01.png">
+  <div id="banner" style="text-align: center;">
+    <a target="_blank" href="__URL__/item/id/3" target="_blank">
+      <img src="https://segmentfault.com/img/bV9DfM" style="widht:640px;height:360px;" />
+    </a>
+  </div>
+  <div class="separate" style="width:100%;height:45px;background-color:#ffe34a;">
+  </div>    
+  <p>推广咨询以及商务合作请联系客服专员，欢迎各位提出宝贵意见</p>
+  <img class="img" src="http://img2.zxvp.org.cn/t/01/09/9384660287.png">
   </div>
   <div id="footer" style="text-align:center;vertical-align:middle;height:50px;line-height:50px;background-color:#F5F5F5;">
   手赚资讯网欢迎您

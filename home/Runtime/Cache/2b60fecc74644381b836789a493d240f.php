@@ -1,9 +1,12 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="zh-cn">
   <head>
+    <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>手赚资讯网</title>
+    <meta name="keywords" content="手赚、手赚资讯、手赚资讯网、最新手赚软件、提现秒到账软件、手机挖矿赚钱软件、看广告赚钱软件、高单价赚钱软件、转发文章赚钱软件、微信投票赚钱软件、苹果手机赚钱软件">
+    <meta name="description" content="致力打造最新精品手机赚钱软件分享平台、专注手赚第一资讯、为精品而生！">
     <style type="text/css">
     body{
       margin: 0;
@@ -36,6 +39,7 @@
       background-color: #ff6965;
       height: 45px;
       line-height: 45px;
+      clear:both;
     }
     .nav-wrap .nav ul{
       list-style: none;
@@ -88,7 +92,7 @@
     }
     .items ul li a img{
       width: 140px;
-      height: 14s0px;
+      height: 140px;
     }    
   </style>
   </head>
@@ -96,10 +100,10 @@
   <div class="header">
     <div class="topNav">
       <div class="left">
-      手赚资讯网
+      <img style="height:45px;line-height: 45px;margin-top: 15px;" src="logo/1515402078_544189.png" />
       </div>
       <div class="right">
-        <a href="index9.php">登录</a>
+        <a href="#">登录</a>
         |
         <a href="#">论坛</a>
       </div>
@@ -109,7 +113,7 @@
     <div class="nav" >
       <ul>
         <li>
-          <a href="index.php" class="active">站点首页</a>
+          <a href="index.php">站点首页</a>
         </li>
         <li>
           <a href="__URL__/index1">精品推荐</a>
@@ -118,7 +122,7 @@
           <a href="__URL__/index2">安卓有米</a>
         </li>          
         <li>
-          <a href="__URL__/index3">苹果有米</a>
+          <a href="__URL__/index3" class="active">苹果有米</a>
         </li>   
         <li>
           <a href="__URL__/index4">热门活动</a>
@@ -137,8 +141,8 @@
   </div>
   <div id="foo">
     <div id="banner" style="text-align: center;">
-      <a href="#" target="_blank">
-        <img src="Public/images/20180104x640x360.png" style="widht:640px;height:360px;" />
+      <a target="_blank" href="__URL__/item/id/3" target="_blank">
+        <img src="http://qstatic.zuimeia.com/img/covers/cld/2017110318311168986_640x360.jpeg" style="widht:640px;height:360px;" />
       </a>
     </div>
     <div class="separate" style="width:100%;height:45px;background-color:#ffe34a;">
@@ -150,25 +154,25 @@
     <div class="items">
       <ul>
         <li>
-          <a href="#">
-            <img src="http://www.shouzuanwu.com/upload/img/2017/04/04/58e3a5502f2e2.jpg" alt="手赚资讯" />
+          <a target="_blank" href="__URL__/item/id/8">
+            <img src="http://www.shouzuanwu.com/upload/img/2017/02/02/5892dd893ba97.png" alt="手赚资讯" />
           </a>
         </li>
         <li>
-          <a href="#">
-            <img src="http://www.shouzuanwu.com/upload/img/2017/07/18/596deb2bdd40a.png" alt="手赚资讯" />
+          <a target="_blank" href="__URL__/item/id/16">
+            <img src="http://www.appzhonghua.com/attachment/anzhuo/logo/44/201607101468161856.jpg" alt="手赚资讯" />
           </a>
         </li>
         <li>
-          <a href="#"><img src="http://www.shouzuanwu.com/upload/img/2016/12/23/585d2e1d71626.png" alt="手赚资讯" />
+          <a target="_blank" href="__URL__/item/id/4"><img src="http://www.shouzuanwu.com/upload/img/2016/12/23/585d2e1d71626.png" alt="手赚资讯" />
           </a>
         </li>
         <li>
-          <a href="#"><img src="http://www.shouzuanwu.com/upload/img/2017/11/01/59f9bb253f435.jpg" alt="手赚资讯" />
+          <a target="_blank" href="__URL__/item/id/7"><img src="http://www.shouzuanwu.com/upload/img/2017/11/01/59f9bb253f435.jpg" alt="手赚资讯" />
           </a>
         </li>
         <li>
-          <a href="#"><img src="http://www.shouzuanwu.com/upload/img/2017/04/18/58f5c5cca3a2a.png" alt="手赚资讯" />
+          <a target="_blank" href="__URL__/item/id/8"><img src="http://www.shouzuanwu.com/upload/img/2017/02/02/5892dd893ba97.png" alt="手赚资讯" />
           </a>
         </li>
       </ul>
@@ -182,25 +186,25 @@
     <div class="items">
       <ul>
         <li>
-          <a href="#">
-            <img src="http://www.shouzuanwu.com/upload/img/2017/04/04/58e3a5502f2e2.jpg" alt="手赚资讯" />
+          <a target="_blank" href="__URL__/item/id/8">
+            <img src="http://www.shouzuanwu.com/upload/img/2017/02/02/5892dd893ba97.png" alt="手赚资讯" />
           </a>
         </li>
         <li>
-          <a href="#">
-            <img src="http://www.shouzuanwu.com/upload/img/2017/07/18/596deb2bdd40a.png" alt="手赚资讯" />
+          <a target="_blank" href="__URL__/item/id/9">
+            <img src="http://www.shouzuanwu.com/upload/img/2017/02/01/58916114b5bb7.jpeg" alt="手赚资讯" />
           </a>
         </li>
         <li>
-          <a href="#"><img src="http://www.shouzuanwu.com/upload/img/2016/12/23/585d2e1d71626.png" alt="手赚资讯" />
+          <a target="_blank" href="__URL__/item/id/10"><img src="http://static.appshike.com/pc/images/sklogomini.png" alt="手赚资讯" />
           </a>
         </li>
         <li>
-          <a href="#"><img src="http://www.shouzuanwu.com/upload/img/2017/11/01/59f9bb253f435.jpg" alt="手赚资讯" />
+          <a target="_blank" href="__URL__/item/id/11"><img src="http://www.shouzuanwu.com/upload/img/2017/02/01/5891c0b80a122.png" alt="手赚资讯" />
           </a>
         </li>
         <li>
-          <a href="#"><img src="http://www.shouzuanwu.com/upload/img/2017/04/18/58f5c5cca3a2a.png" alt="手赚资讯" />
+          <a target="_blank" href="__URL__/item"><img src="http://www.shouzuanwu.com/upload/img/2017/04/18/58f5c5cca3a2a.png" alt="手赚资讯" />
           </a>
         </li>
       </ul>

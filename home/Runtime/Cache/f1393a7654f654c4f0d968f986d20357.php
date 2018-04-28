@@ -47,6 +47,7 @@
         text-align: left;
         margin: 0 auto;
         width: 800px;
+        padding: 5px 0px;
     }
     #items ul li{
       display: inline-block;
@@ -67,6 +68,7 @@
 
   </div>
   <div id="foo">
+    <input type="hidden" id="pid" value="<?php echo ($data["id"]); ?>"/>
     <div id="title" style="
     height: 75px;
     line-height: 75px;
@@ -75,7 +77,7 @@
     font-weight: bold;
     border-radius: 0 0 2px 2px;
     ">
-        微记账-智能语音随手记账软件
+        <?php echo ($data["title"]); ?>
     </div>
 
     <div id="thumb">
@@ -123,7 +125,7 @@
           </a>
         </li>
         <li>
-          <a target="_blank" href="__URL__/item"><img src="http://www.shouzuanwu.com/upload/img/2017/04/18/58f5c5cca3a2a.png" alt="手赚资讯" />
+          <a target="_blank" href="__URL__/item/id/8"><img src="http://www.shouzuanwu.com/upload/img/2017/02/02/5892dd893ba97.png" alt="手赚资讯" />
           </a>
         </li>
     </ul>
@@ -135,7 +137,7 @@
     text-align: center;
     margin: 5px auto;">
     <textarea name="editor1" id="editor1" rows="10" cols="80">
-        This is my textarea to be replaced with CKEditor.
+        请留下您的足迹
     </textarea>
   </div>
   <div style="
@@ -161,6 +163,7 @@
   <div id="footer" style="text-align:center;vertical-align:middle;height:50px;line-height:50px;background-color:#49AB4F;">
   
   </div>
+  <script type="text/javascript" src="/tel/Public/js/jquery-1.7.2.min.js"></script>
   <script>
       // Replace the <textarea id="editor1"> with a CKEditor
       // instance, using default configuration.
@@ -169,8 +172,20 @@
   <script type="text/javascript">
     $(document).ready(function(){
       $('#ok').click(function(){
-        var data = CKEDITOR.instances.editor1.getData();
-        alert(data);
+        var pid = $('#pid').val();
+        var content = CKEDITOR.instances.editor1.getData();
+        $.ajax({
+          type:'post',        
+          url:'__URL__/addData',
+          data:{
+            pid:pid,
+            content:content
+          },
+          async:false,
+          success:function(data){     
+            alert('评论成功');     
+          }
+        }); 
       });
     });
   </script>

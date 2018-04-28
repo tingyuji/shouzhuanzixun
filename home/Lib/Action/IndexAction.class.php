@@ -231,6 +231,12 @@ class IndexAction extends Action {
       echo $add_id;
     } 
   }   
+  public function addData(){
+    $data = $this->_post();
+
+    $db = M('comment');       
+    $add_id = $db->add($data); 
+  }  
   public function addData1(){
     $db = M('phoneTable');       
     $data = $this->_post();
