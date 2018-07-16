@@ -141,7 +141,7 @@
 <div id="header">
 	<div class="headbar_bg">
     	<div class="headbar">
-        	<div class="headbar_left">欢迎您！&nbsp;&nbsp;admin&nbsp;&nbsp;<a href="" class="c_orange">我的空间</a>&nbsp;&nbsp;<a href="__URL__/index11" class="c_orange">积分系统</a>&nbsp;&nbsp;<a id="exit" href="#" class="c_orange">退出</a>&nbsp;&nbsp;</div>
+        	<div class="headbar_left">欢迎您！&nbsp;&nbsp;admin&nbsp;&nbsp;&nbsp;&nbsp;<a id="exit" href="#" class="c_orange">退出</a>&nbsp;&nbsp;</div>
 
           </div>
     </div>
@@ -175,13 +175,7 @@
       </div>
       <div style="margin:0;padding:0;">
         <table id="dg1"></table>
-      </div>    
-      <div class="ptbtn_box clearfix" style="padding-top:5px;">
-          <button type="button" id="b1" class="btn btn-success">添加</button>
-          <button type="button" id="b2" class="btn btn-warning">删除</button>       
-          <button type="button" id="refresh"class="btn btn-info">刷新</button>
-          
-      </div>
+      </div>   
       
       
     </div>

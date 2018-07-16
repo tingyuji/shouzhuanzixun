@@ -424,7 +424,7 @@ class IndexAction extends Action {
         $db = M('category');       
         $allitems = $db->order("`id` ASC")->select();
         // echo $db->getLastSql();
-        $items = $db->order("`id` ASC")->limit($offset,$rows)->select();
+        $items = $db->order("`id` DESC")->limit($offset,$rows)->select();
         $total=count($allitems);
         $result["total"] = $total;   
         $result["rows"] = $items;   
@@ -545,7 +545,7 @@ class IndexAction extends Action {
         $rows = $data['rows'];
         $offset = ($page-1)*$rows;
         $db = M('tag');       
-        $allitems = $db->order("`id` ASC")->select();
+        $allitems = $db->order("`id` DESC")->select();
         // echo $db->getLastSql();
         $items = $db->order("`id` ASC")->limit($offset,$rows)->select();
         $total=count($allitems);
@@ -563,14 +563,14 @@ class IndexAction extends Action {
         echo json_encode($rows);
   } 
   public function getdata3(){
-	    $data = $this->_post();       
+	      $data = $this->_post();       
         $page = $data['page'];
         $rows = $data['rows'];
         $offset = ($page-1)*$rows; 
 		
         $db = M('material');       
         $allItems = $db->order("`id` ASC")->select();
-		    $items = $db->order("`id` ASC")->limit($offset,$rows)->select();
+		    $items = $db->order("`id` DESC")->limit($offset,$rows)->select();
         $total=count($allItems);
         $result["total"] = $total;   
         $result["rows"] = $items;   
@@ -586,9 +586,21 @@ class IndexAction extends Action {
         echo json_encode($rows);
   }   
   public function getdata4(){
-        $db = M('advertTable');       
-        $rows = $db->order("`id` DESC")->select();
-        echo json_encode($rows);
+        $data = $this->_post();       
+        $page = $data['page'];
+        $rows = $data['rows'];
+        $offset = ($page-1)*$rows;     
+        $db = M('log');       
+        $logs = $db->order("`id` ASC")->select();
+        $items = $db->order("`id` DESC")->limit($offset,$rows)->select();
+        $total=count($logs);
+        $obj["total"] = $total;   
+        $obj["rows"] = $items;   
+        if($total==0){
+          $obj["rows"] = array();   
+        }        
+        $json= json_encode($obj); 
+        echo $json; 
   }      
   public function getAllData4(){
         $db = M('advertTable');       
@@ -629,9 +641,16 @@ class IndexAction extends Action {
         echo $jsonresult;      
   }    
   public function getdata6(){
-        $db = M('correctionTable');       
+        $db = M('comment');       
         $rows = $db->order("`id` DESC")->select();
-        echo json_encode($rows);
+        $total=count($rows);
+        $result["total"] = $total;   
+        $result["rows"] = $rows;   
+        if($total==0){
+          $result["rows"] = array();   
+        }        
+        $jsonresult= json_encode($result); 
+        echo $jsonresult;    
   }
   public function getAllData7(){
       $data = $this->_post();       

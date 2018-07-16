@@ -119,31 +119,14 @@
         });
     });
 </script>
-  <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?fa256a40e40fba416edca290d80d8bcc";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?637b688fe8fb86196ee7d96de2b369b0";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-</script> 
+
 </head>
 <body>
 <style>.m_tabtitle select,.pt_send select,.pages_right select{border:1px solid #ccc;}</style>
 <div id="header">
   <div class="headbar_bg">
       <div class="headbar">
-          <div class="headbar_left">欢迎您！&nbsp;&nbsp;admin&nbsp;&nbsp;<a href="" class="c_orange">我的空间</a>&nbsp;&nbsp;<a href="__URL__/index11" class="c_orange">积分系统</a>&nbsp;&nbsp;<a id="exit" href="#" class="c_orange">退出</a>&nbsp;&nbsp;</div>
+          <div class="headbar_left">欢迎您！&nbsp;&nbsp;admin&nbsp;&nbsp;<a id="exit" href="#" class="c_orange">退出</a>&nbsp;&nbsp;</div>
 
           </div>
     </div>
@@ -191,18 +174,8 @@ var _hmt = _hmt || [];
 
 </div>
 <div id="footer">
-<div class="foot">Copyright © 2014 all right reserved.</div>
+<div class="foot">Copyright © 2018 all right reserved.</div>
 </div>
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?fa256a40e40fba416edca290d80d8bcc";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
 
 
 </body>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+<canvas id="canvas" width="600" height="600" style="background-color:#fcd;"></canvas>
+<input id="handle" type="button" value="调暗图片" />
+<input id="rotate" type="button" value="旋转图片" />
+<input id="mosaic" type="button" value="打码图片" />
+<input id="create" type="button" value="生成图片" />
+<input id="save" type="button" value="下载图片" />
+<div id="result"></div>
+<script type="text/javascript">
+var canvas = document.getElementById("canvas");
+
+window.onload = function(){
+    var canvas = document.getElementById("canvas"),  //获取Canvas画布对象
+    context = canvas.getContext('2d'); //获取2D上下文对象，大多数Canvas API均为此对象方法
+    var image = new Image(); //定义一个图片对象
+    image.src = './imgs/img.jpg'; 
+    image.crossOrigin = "";
+	function draw(obj){
+	    //绘制第一张图
+	    context.drawImage(obj,0,0);
+	    //获取坐边图像的局部坐标的部分像素（左图位置在258，为方便演示，这里设成和马赛克显示位置一样的坐标）
+	    var oImg = context.getImageData(0,0,canvas.width,canvas.height);
+	    var w = oImg.width;
+	    var h = oImg.height;
+	    //马赛克的程度，数字越大越模糊
+	    var num = 10;
+	    //等分画布
+	    var stepW = w/num;
+	    var stepH = h/num;
+	    //这里是循环画布的像素点
+	    for(var i=0;i<stepH;i++){
+	        for(var j=0;j<stepW;j++){
+	            //获取一个小方格的随机颜色，这是小方格的随机位置获取的
+	            var color = getXY(oImg,j*num+Math.floor(Math.random()*num),i*num+Math.floor(Math.random()*num));
+	            //这里是循环小方格的像素点，
+	            for(var k=0;k<num;k++){
+	                for(var l=0;l<num;l++){
+	                    //设置小方格的颜色
+	                    setXY(oImg,j*num+l,i*num+k,color);
+	                }    
+	            }
+	                
+	        }    
+	    }
+	    context.putImageData(oImg,0,0);
+	}
+
+	function getXY(obj,x,y){
+	    var w = obj.width;
+	    var h = obj.height;
+	    var d = obj.data;
+	    var color = [];
+	    color[0] =     obj.data[4*(y*w+x)];
+	    color[1] =     obj.data[4*(y*w+x)+1];
+	    color[2] =     obj.data[4*(y*w+x)+2];
+	    color[3] =     obj.data[4*(y*w+x)+3];
+	    return color;
+	}
+
+	function setXY(obj,x,y,color){
+	    var w = obj.width;
+	    var h = obj.height;
+	    var d = obj.data;
+	    obj.data[4*(y*w+x)] = color[0];
+	    obj.data[4*(y*w+x)+1] = color[1];
+	    obj.data[4*(y*w+x)+2] = color[2];
+	    obj.data[4*(y*w+x)+3] = color[3];
+	}	  
+  	image.onload = function(){ //此处必须注意！后面所有操作均需在图片加载成功后执行，否则图片将处理无效
+    context.drawImage(image,0,0); //将图片从Canvas画布的左上角(0,0)位置开始绘制，大小默认为图片实际大小
+    var handle = document.getElementById("handle");
+    var create = document.getElementById("create");
+    handle.onclick = function(){ // 单击“处理图片”按钮，处理图片
+      var imgData = context.getImageData(0,0,canvas.width,canvas.height);  //获取图片数据对象
+      var data = imgData.data; //获取图片数据数组，该数组中每个像素用4个元素来保存，分别表示红、绿、蓝和透明度值
+      var average = 0;
+      for (var i = 0; i < data.length; i+=4) {
+        average = Math.floor((data[i]+data[i+1]+data[i+2])/3); //将红、绿、蓝色值求平均值后得到灰度值
+        data[i] = data[i+1] = data[i+2] = average;
+      }
+      imgData.data = data;
+      context.putImageData(imgData,0,0); //将处理后的图像数据重写至Canvas画布，此时画布中图像变为黑白色
+    };
+    rotate.onclick = function(){ // 单击“生成图片”按钮，导出图片
+      context.rotate(-Math.PI / 4);
+      context.drawImage(image,0,0);
+    };
+    mosaic.onclick = function(){ // 单击“处理图片”按钮，处理图片
+      draw(image);
+    };    
+    create.onclick = function(){ // 单击“生成图片”按钮，导出图片
+      var imgSrc = canvas.toDataURL(); //获取图片的DataURL
+      var newImg = new Image();
+      var result = document.getElementById("result");
+      newImg.src = imgSrc; //将图片路径赋值给src
+      result.innerHTML = '';
+      result.appendChild(newImg);
+    };
+	save.onclick=function(){
+	    var save_url=canvas.toDataURL("image/png");
+	    var a=document.createElement('a')
+	    document.body.appendChild(a)
+	    a.href=save_url
+	    a.download="我的canvas作品"
+	    a.click()
+	};   
+  };
+};	
+</script>
+
+</body>
+</html>

@@ -89,6 +89,7 @@
       height: 150px;
       padding: 5px;
       vertical-align:top; 
+      background-color:#ffe34a;
     }
     .items ul li a img{
       width: 140px;
@@ -103,7 +104,7 @@
       <img style="height:45px;line-height: 45px;margin-top: 15px;" src="logo/1515402078_544189.png" />
       </div>
       <div class="right">
-        <a href="#">登录</a>
+        <a href="__URL__/login">登录</a>
         |
         <a href="#">论坛</a>
       </div>
@@ -141,7 +142,7 @@
   </div>
   <div id="foo">
     <div id="banner" style="text-align: center;">
-      <a target="_blank" href="__URL__/item/id/3" target="_blank">
+      <a target="_blank" href="__URL__/items" target="_blank">
         <img src="http://qstatic.zuimeia.com/img/covers/cld/2017110318311168986_640x360.jpeg" style="widht:640px;height:360px;" />
       </a>
     </div>
@@ -155,7 +156,7 @@
       <ul>
         <li>
           <a target="_blank" href="__URL__/item/id/8">
-            <img src="http://www.shouzuanwu.com/upload/img/2017/02/02/5892dd893ba97.png" alt="手赚资讯" />
+            <img src="http://www.xiaomutong.com.cn/ueditor/php/upload/image/20180511/1526036679212582.jpeg" alt="手赚资讯" />
           </a>
         </li>
         <li>

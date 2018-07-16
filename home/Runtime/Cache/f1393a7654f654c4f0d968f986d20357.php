@@ -4,7 +4,7 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>手赚资讯网</title>
+    <title><?php echo ($data["title"]); ?></title>
     <meta name="keywords" content="手赚、手赚资讯、手赚资讯网、最新手赚软件、提现秒到账软件、手机挖矿赚钱软件、看广告赚钱软件、高单价赚钱软件、转发文章赚钱软件、微信投票赚钱软件、苹果手机赚钱软件">
     <meta name="description" content="致力打造最新精品手机赚钱软件分享平台、专注手赚第一资讯、为精品而生！">    
     <script type="text/javascript" src="Public/home/js/jquery.js"></script>
@@ -24,6 +24,10 @@
       margin: 0 auto;
       background-color: #ff6965;
     }
+    .header p a{
+        color : #fff;
+        text-decoration : none;         
+    }    
     #foo{
       text-align: center;
       margin: 5px auto;
@@ -60,15 +64,31 @@
     #items ul li a img{
       width: 120px;
       height: 120px;
-    }     
+    } 
+    #comments{
+      text-align: left;
+      margin: 20px auto;
+      padding: 10px 10px;
+      width: 800px;
+      min-height: 250px;
+      background-color: #FFF;
+    }    
+    #comments p{
+      padding-bottom: 45px;
+      border-bottom: 1px solid #F5F5F5;
+    }    
   </style>
   </head>
   <body>
   <div class="header">
-
+  <p style="color: #fff;">
+  <a target="_self" href="__URL__/index">
+    ㊗️㊗️㊗️㊗️㊗️㊗️㊗️㊗️㊗️㊗️
+  </a>
+  </p>
   </div>
   <div id="foo">
-    <input type="hidden" id="pid" value="<?php echo ($data["id"]); ?>"/>
+    <input type="hidden" id="itemid" value="<?php echo ($data["id"]); ?>"/>
     <div id="title" style="
     height: 75px;
     line-height: 75px;
@@ -81,11 +101,14 @@
     </div>
 
     <div id="thumb">
+      <a href="__URL__/items" target="_blank">
         <img src="http://weixinyuedu.com.cn/Public/images/20180104x640x360.png"/>
+      </a>
     </div>
     <div id="body" style="
     text-align: left;
     padding:15px 45px;
+    font-family: Optima-Regular, PingFangTC-light;
 
     ">
         2018年攒钱赚钱是正道，之前都不知道钱花在什么地方了，应该开始记账走起，希望2018年节流开源，成为有钱人，
@@ -108,7 +131,7 @@
     <ul>
         <li>
           <a target="_blank" href="__URL__/item/id/1">
-            <img src="http://www.shouzuanwu.com/upload/img/2017/04/04/58e3a5502f2e2.jpg" alt="手赚资讯" />
+            <img src="http://www.xiaomutong.com.cn/ueditor/php/upload/image/20180511/1526036679212582.jpeg" alt="手赚资讯" />
           </a>
         </li>
         <li>
@@ -160,6 +183,15 @@
       cursor: pointer;" 
     value="提交评论"/>
   </div>
+  <div class="separate" style="width:100%;height:45px;background-color:#90EE90;">
+  </div>
+  <div class="text-vertical-center">
+        <span>热门评论</span>
+        <br>
+  </div>    
+  <div id="comments">
+  <?php if(is_array($data["comments"])): $k = 0; $__LIST__ = $data["comments"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($k % 2 );++$k;?><span style="color:#2f8bcd;"><?php echo ($vo["createTime"]); ?></span><?php echo ($vo["content"]); endforeach; endif; else: echo "" ;endif; ?>  
+  </div>
   <div id="footer" style="text-align:center;vertical-align:middle;height:50px;line-height:50px;background-color:#49AB4F;">
   
   </div>
@@ -172,20 +204,26 @@
   <script type="text/javascript">
     $(document).ready(function(){
       $('#ok').click(function(){
-        var pid = $('#pid').val();
+        var itemid = $('#itemid').val();
         var content = CKEDITOR.instances.editor1.getData();
-        $.ajax({
-          type:'post',        
-          url:'__URL__/addData',
-          data:{
-            pid:pid,
-            content:content
-          },
-          async:false,
-          success:function(data){     
-            alert('评论成功');     
-          }
-        }); 
+        if(content.length<5){
+          alert('评论不能少于5个字');
+        }
+        if(content.length>6){
+          $.ajax({
+            type:'post',        
+            url:'__URL__/addData',
+            data:{
+              itemid: itemid,
+              content: content
+            },
+            async:false,
+            success:function(data){     
+              alert('评论成功');     
+            }
+          });           
+        }
+
       });
     });
   </script>

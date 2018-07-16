@@ -89,6 +89,7 @@
       height: 150px;
       padding: 5px;
       vertical-align:top; 
+      background-color:#ffe34a;
     }
     .items ul li a img{
       width: 140px;
@@ -103,7 +104,7 @@
       <img style="height:45px;line-height: 45px;margin-top: 15px;" src="logo/1515402078_544189.png" />
       </div>
       <div class="right">
-        <a href="#">登录</a>
+        <a href="__URL__/login">登录</a>
         |
         <a href="#">论坛</a>
       </div>
@@ -141,8 +142,8 @@
   </div>
   <div id="foo">
     <div id="banner" style="text-align: center;">
-      <a target="_blank" href="__URL__/item/id/3" target="_blank">
-        <img src="http://img2.zxvp.org.cn/t/01/09/0591145488.jpg" style="widht:640px;height:360px;" />
+      <a target="_blank" href="__URL__/items" target="_blank">
+        <img src="http://www.xiaomutong.com.cn/images/2018062306.png" style="widht:640px;height:360px;" />
       </a>
     </div>
     <div class="separate" style="width:100%;height:45px;background-color:#ffe34a;">

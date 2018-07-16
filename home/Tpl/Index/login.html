@@ -1,158 +1,74 @@
 <html>
-<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-    <meta content="black" name="apple-mobile-web-app-status-bar-style">
-    <meta content="yes" name="apple-mobile-web-app-capable">
-    <title>扎鲁特旗通讯录</title>
-    <link rel="apple-touch-icon" href="http://img.ccoo.cn/wap/logo/logo-icon.png">
-    <link rel="stylesheet" type="text/css" href="Public/ugc_files/common.v2.css">
-    <link href="Public/ugc_files/common.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="Public/ugc_files/store.css">
-    <script type="text/javascript" src="Public/ugc_files/jquery.js"></script>
-    <script type="text/javascript" src="Public/js/Cookies/src/cookies.min.js"></script>
-    <script type="text/javascript" src="Public/ugc_files/common.v2.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('#ok').click(function(){
-                var username = $('#username').val();
-                var password=$('#password').val();
-                $.ajax({
-                    type:'post',                
-                    url:"__URL__/checkus", 
-                    data:{
-                     username:username,
-                     password:password
-                    },
-                    async:false,
-                    dataType:'json',
-                    success:function(data){ 
-                        if(data==null){
-                            alert('账号或者密码错误，请重新登录！');  
-                            return;                  
-                        }                    
-                        if(data.length==1){
-                            var id=data[0]['id'];
-                            var point=data[0]['point'];
-                            Cookies.set('username2',username, { expires: 96400 }); 
-                            Cookies.set('id',id, { expires: 96400 }); 
-                            Cookies.set('point',point, { expires: 96400 }); 
-                            window.location.href='__URL__/manage';
-                            //http://tel.xsdcm.cn/index.php?s=/Index/manage
-                        }                 
-                    }
-                });
-            });
-           
-        });
-    </script>    
+<head>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>手赚资讯网</title>
+    <meta name="keywords" content="手赚、手赚资讯、手赚资讯网、最新手赚软件、提现秒到账软件、手机挖矿赚钱软件、看广告赚钱软件、高单价赚钱软件、转发文章赚钱软件、微信投票赚钱软件、苹果手机赚钱软件">
+    <meta name="description" content="致力打造最新精品手机赚钱软件分享平台、专注手赚第一资讯、为精品而生！">    
+    <script type="text/javascript" src="Public/home/js/jquery.js"></script>
+    <style type="text/css">
+        body{
+            padding: 0px;
+            margin: 0px;
+        }
+        #header{
+            height: 100px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 100px;
+        }
+        #header a{
+            text-decoration: none;
+        }
+        #main{
+            width: 100%;
+            height: 450px;
+            background-image: url("https://static1.kjtpay.com/wallet/new/img/banner1_1.jpg"); 
+            visibility: visible;
+            position: relative;
+        }
+        #main #myform{
+            position: absolute;
+            left: 60%;
+            top: 50px;
+            border-radius: 2px;
+            height: 350px;
+            width: 450px;
+            background-color: #ffffff;
+            padding-left: 5px;
+            padding-top: 5px;
+            opacity: 0.8;
+
+        }
+        #main #myform input[type='submit']{
+            width:50px;
+        }
+        #footer{
+            height: 120px;
+        }
+    </style>
 </head>
 <body>
-    
-<header>
-    <dl class="hdcontent">
-        <dd class="toback"><a onclick="fback()"></a></dd>
-        <dd class="hduser">
-        
-            <a href="__URL__/index" rel="nofollow"><i class="off"></i></a>
-            
-        </dd>
-
-        <dd class="hdnav">
-            <a href="__URL__/ugc"><i class="off"></i></a>        
-        </dd>
-        
-        <dt>会员登录</dt>
-    </dl>
-    <div id="hdnav-cont">
-        <span></span>
-        <!--
-        <ul id="TopCss1_top"><li><a class="ind" href="http://m.tlzx.cc/"><i></i></a>首页</li><li><a class="news" href="http://m.tlzx.cc/news/"><i></i></a>热点资讯</li><li><a class="bbs" href="http://m.tlzx.cc/bbs/"><i></i></a>逛论坛</li><li><a class="post" href="http://m.tlzx.cc/post/"><i></i></a>分类信息</li><li><a class="tel" href="http://m.tlzx.cc/tel/"><i></i></a>电话簿</li><li><a class="stor" href="http://m.tlzx.cc/store/"><i></i></a>找商家</li><li><a class="tuan" href="http://m.tlzx.cc/tuan/"><i></i></a>本地团购</li><li><a class="job" href="http://m.tlzx.cc/post/zhaopin/"><i></i></a>找工作</li><li><a class="house" href="http://m.tlzx.cc/post/fangwu/"><i></i></a>找房子</li><li><a class="xlp" href="http://m.tlzx.cc/post/xinloupan/"><i></i></a>新楼盘</li></ul>
-        -->
+    <div id="header">
+        <a href="__URL__/index">首页</a>
+        |
+        <a href="__URL__/login">登陆</a>
+        |
+        <a href="__URL__/new">注册</a>
+        |
+        <a href="__URL__/index">联系</a>
     </div>
-</header>
-<script type="text/javascript">
-    function fback() {
-        if (window.history.length > 0) {
-            window.history.back()
-        }
-        else {
-            window.location.href = "/index.aspx"
-        }
-    }
-</script>
 
-    <div class="container">
-        <!--
-        <ul class="actab">
-            <li><a class="cur" rel="nofollow">账号登录</a></li>
-            <li><a href="http://m.tlzx.cc/login/smslogin.aspx?reurl=/tel/index.aspx">短信登录</a></li>
-        </ul>
-        -->
-
-
-        <div class="formwrap">
-            <!--<form name="account_login" action="" method="post">-->
-            <i class="phonicon"></i>
-            <div class="phonwrap"><input id="username" name="username" type="text" placeholder="用户名" class="textype" maxlength="11">
-            </div>
-            <i class="codeicon"></i><input id="password" name="password" type="text" placeholder="密码" maxlength="6" class="textype">
-            <!--
-            <input type="submit" name="Save" value="登　录" onclick="return sCheckform();" class="subotom">
-        -->
-            <input type="submit" name="Save" value="登　录" id="ok" class="subotom">
-            <!--</form>-->
-            <div class="qqlogin"><a href="__URL__/reg" class="blue">还没有账号，立即注册</a></div>
-            <!--
-            <div class="qqlogin">
-                您还可以用 <a href="javascript:void(0)" onclick="qqlogindo()" rel="nofollow">QQ登录<img src="Public/ugc_files/qq_login.gif"></a>
-            </div>
-        -->
-        </div>
+    <div id="main">
+        <form id="myform">
+            <input type="text" name="loginname" id="loginname" placeholder="请输入登录账号">
+            <input type="text" name="password" id="password" placeholder="请输入登录密码">
+            <input type="submit" value="登陆">
+        </form>
     </div>
-    
-<footer>
 
-    <div class="fotibc"><span>©2015 粤ICP备14080186号-1</span></div>
-</footer>
-
-
-
-    <script type="text/javascript">
-        function qqlogindo() {
-            window.location.href = 'http://openapi.qzone.qq.com/oauth/show?which=ConfirmPage&display=mobile&client_id=204708&response_type=token&scope=all&redirect_uri=http%3A%2F%2Fqqlogin.ccoo.cn%2F%3Fpath%3Dm.tlzx.cc%2ftel%2findex.aspx'
-        }
-        $(".wxlogin").click(function () {
-            window.location.href = 'm.tlzx.cc%2ftel%2findex.aspx'
-        })
-        function sCheckform() {
-            if ($("#username").val() == "" || $("#username").val() == "用户名/手机/邮箱") {
-                errorFun("请输入城市通账号!");
-                $("#username").focus();
-                return false;
-            }
-            if ($("#username").val().length <= 3) {
-                errorFun("城市通账号输入错误!");
-                $("#username").focus();
-                return false;
-            }
-            if ($("#password").val() == "") {
-                errorFun("请输入城市通密码!");
-                $("#password").focus();
-                return false;
-            }
-            if ($("#password").val().length <= 4) {
-                errorFun("城市通密码输入错误!");
-                $("#password").focus();
-                return false;
-            }
-            return true;
-        }
-    </script>
-
-
-<div id="toTop"><i></i></div><style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style>
-<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254416569'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/stat.php%3Fid%3D1254416569%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+    <div id="footer">
+    </div>
 </body>
 </html>

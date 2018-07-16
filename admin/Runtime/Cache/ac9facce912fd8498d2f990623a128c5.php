@@ -144,60 +144,24 @@
           
             columns: [[
                 { field: 'ck', checkbox: true, hidden: false },
-                { field: 'button', title: '修改', width: 50,
-                    formatter: function (value, row, index) {
-                      return '<a href="#" onclick="rowClick('+index+')"><span style="color:#1E90FF;font-weight:bold;">修改</span></a>';                        
-                    }
-                },  
                 { field: 'id', title: '序号', width: 50, hidden: false },
-                { field: 'UpdateTime', title: '创建时间', width: 150},                 
-                { field: 'code', title: '商家编码', width: 100 },  
-                { field: 'brand', title: '品牌', width: 100 },                           
-                { field: 'imageName', title: '图片', width: 200,
-                    formatter: function (value, row, index) {
-                        var imageName = row.imageName;
-                        if(imageName==''){
-                            return '';
-                        }
-                        return "<img style='width:60px;height:60px;' src='"+imageName+"'>";
-                    }
-                },                 
-                { field: 'title', title: '标题', width: 750 }
-            ]],
-            onClickRow:function(index,row){  
-                Cookies.set('id',row.id, { expires: 96400 }); // Expires in 1天=24*60*60
-            },            
+                { field: 'createTime', title: '浏览时间', width: 150},
+                { field: 'itemtitle', title: '标题', width: 1250 }
+            ]],          
             onLoadSuccess:function(data){  
 
             }            
         });
     });
 </script>
-  <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?fa256a40e40fba416edca290d80d8bcc";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?637b688fe8fb86196ee7d96de2b369b0";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-</script> 
+
 </head>
 <body>
 <style>.m_tabtitle select,.pt_send select,.pages_right select{border:1px solid #ccc;}</style>
 <div id="header">
   <div class="headbar_bg">
       <div class="headbar">
-          <div class="headbar_left">欢迎您！&nbsp;&nbsp;admin&nbsp;&nbsp;<a href="" class="c_orange">我的空间</a>&nbsp;&nbsp;<a href="__URL__/index11" class="c_orange">积分系统</a>&nbsp;&nbsp;<a id="exit" href="#" class="c_orange">退出</a>&nbsp;&nbsp;</div>
+          <div class="headbar_left">欢迎您！&nbsp;&nbsp;admin&nbsp;&nbsp;<a id="exit" href="#" class="c_orange">退出</a>&nbsp;&nbsp;</div>
 
           </div>
     </div>
@@ -226,20 +190,13 @@ var _hmt = _hmt || [];
     <div>
       <div class="pt_dir" style="padding:5px;height:45px;">
 
-        <span style="float:left;">广告信息||请输入关键字</span>
+        <span style="float:left;">浏览日志||请输入关键字</span>
         <input type="text" id="keyword" style="float:left;margin-right:5px;" value=""/>      
         <button type="button" id="query"class="btn btn-info" style="float:left;">查找</button>
-        <input id="file_upload" name="file_upload" type="file" multiple style="float:right;">
       </div>
       <div style="margin:0;padding:0;">
         <table id="dg1"></table>
-      </div>    
-      <div class="ptbtn_box clearfix">
-          <button type="button" id="b1" class="btn btn-success">添加</button>
-          <button type="button" id="b2" class="btn btn-warning">删除</button>       
-          <button type="button" id="refresh"class="btn btn-info">刷新</button>
-          <button type="button" id="view" class="btn btn-success">查看图片</button>
-      </div>
+      </div>   
       
       
     </div>
